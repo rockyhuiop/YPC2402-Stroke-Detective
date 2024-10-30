@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.meta.xr.simulator": {
+      "version": "file:D:/data/program/unity/HurricaneTemplate_2021_OpenXR-main/Assets/com.meta.xr.simulator-68.0.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.8.16",
       "depth": 1,
