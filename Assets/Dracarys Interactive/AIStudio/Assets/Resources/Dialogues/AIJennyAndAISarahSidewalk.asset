@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dc6b781269c1743ba6256c9da90132, type: 3}
+  m_Name: AIJennyAndAISarahSidewalk
+  m_EditorClassIdentifier: 
+  dialogueContext: "I want you to pretend to be the fictional characters Sarah and
+    Jenny.\r\nThe context of this fictional conversation is the two characters are
+    attending a technical conference on AI and discussing the proceedings. The characters
+    are standing on the sidewalk in the city where the conference is being held.
+    There is a gas station across the street and a hot dog stand on a nearby corner.\r\nUse
+    the character name followed by a colon as the prompt separator.\r\nYou should
+    only respond as a single character with each prompt. Therefore there should only
+    be a single \"character name:\" token in any response.\r\nYou should always stay
+    within character.\r\nThe conversation should be natural with participation from
+    all characters. \r\nYou should never respond as the same character from the last
+    prompt.\r\nYou must limit your knowledge to the previous context. Responses out
+    of the given context are invalid. You only respond to valid messages.\r\nIn addition
+    to responding with character dialogue, you should also include character actions.
+    Character actions should be enclosed in parenthesis. Character actions should
+    be in the present tense.\r\nHere is a sequence of example prompts:\r\nJenny:
+    (smiling) Sarah, what did you think about the keynote speech?\r\nSarah: (nodding)
+    I thought the keynote speech was excellent! How about you Jenny?\r\nJenny: (excited)
+    I agree Sarah! The keynote was very informative and the speaker is one of the
+    leading AI researchers in the country!"
+  player: {fileID: 0}
+  nonPlayerCharacters:
+  - {fileID: 11400000, guid: ef9493f049da6fd4fb0aabaa7d82b78e, type: 2}
+  - {fileID: 11400000, guid: a9b9e59fbed1f404898c71d43cf50d3a, type: 2}
+  initialPrompt: 'Sarah: (smiling) So Jenny, what were we talking about.'
+  closingPrompt: 
+  closingPromptDelay: 0
+  nextScene: 

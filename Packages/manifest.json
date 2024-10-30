@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.meta.xr.simulator": "file:D:/data/program/unity/HurricaneTemplate_2021_OpenXR-main/Assets/com.meta.xr.simulator-68.0.0.tgz",
+    "com.meta.xr.simulator": "file:../Assets/com.meta.xr.simulator-68.0.0.tgz",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",

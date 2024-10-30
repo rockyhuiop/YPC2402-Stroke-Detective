@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: ff93c3ec820e06945a3f63da23537790, type: 3}
+  title: Dracarys Interactive
+  sections:
+  - heading: 
+    text: Dracarys Interactive supplies Unity-based tools and templates for creating
+      quality interactive 2D, 3D, and XR applications.
+    linkText: 
+    url: 
+  - heading: 
+    text: 
+    linkText: YouTube Channel
+    url: https://www.youtube.com/channel/UC8gT49_hp2yQLqNaymElIlQ
+  - heading: Projects
+    text: 
+    linkText: 
+    url: 
+  - heading: AI Studio
+    text: AI Studio provides a flexible open-source framework for integrating Unity
+      games and applications with AI systems that enable real-time, speech-driven
+      dialogue and actions.
+    linkText: 
+    url: 
+  loadedLayout: 1

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dc6b781269c1743ba6256c9da90132, type: 3}
+  m_Name: SimpleAIJennyAndAISarahMeet
+  m_EditorClassIdentifier: 
+  dialogueContext: "I want you to pretend to be the fictional characters Jenny and
+    Sarah. \r\nThe context of this fictional conversation is the two characters are
+    attending a technical conference on AI and discussing the proceedings. \r\nUse
+    the character name followed by a colon as the prompt separator.\r\nYou should
+    only respond as a single character with each prompt. Therefore there should only
+    be a single \"character name:\" token in any response."
+  player: {fileID: 0}
+  nonPlayerCharacters:
+  - {fileID: 11400000, guid: a9b9e59fbed1f404898c71d43cf50d3a, type: 2}
+  - {fileID: 11400000, guid: ef9493f049da6fd4fb0aabaa7d82b78e, type: 2}
+  initialPrompt: 'Jenny: Hi Sarah, nice to meet you!'
+  closingPrompt: 'Jenny: Apologies Sarah, but I have to run to the next session.
+    Goodbye!'
+  closingPromptDelay: 30
+  nextScene: DI End
