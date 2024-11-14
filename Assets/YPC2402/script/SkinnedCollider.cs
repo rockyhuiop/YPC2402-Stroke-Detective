@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkinnedCollider : MonoBehaviour
@@ -7,7 +8,9 @@ public class SkinnedCollider : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer meshRenderer;
     [SerializeField] MeshCollider collider;
     private Transform self;
+    //if the mesh collider is set
     private bool ColliderSet=false;
+    //set the mesh received from SkinnedMeshRenderer to mesh collider
     public void UpdateCollider() {
         Mesh colliderMesh = new Mesh();
         meshRenderer.BakeMesh(colliderMesh);
@@ -18,6 +21,9 @@ public class SkinnedCollider : MonoBehaviour
     void Start()
     {
         self=GetComponent<Transform>();
+        //add mesh collider at euntime
+        self.AddComponent<MeshCollider>();
+        //get the mesh collider
         collider=GetComponent<MeshCollider>();
     }
 
@@ -25,7 +31,9 @@ public class SkinnedCollider : MonoBehaviour
     void Update()
     {
         if (!meshRenderer) {
+            //find the skinned mesh render to get the mesh
             meshRenderer=self.Find("UMARenderer").GetComponent<SkinnedMeshRenderer>();
+            //set the mesh of mesh collider only once 
             if (!ColliderSet) {
                 UpdateCollider();
                 ColliderSet=true;
