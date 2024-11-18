@@ -7,6 +7,7 @@ TagManager:
   - UMAKeepChain
   - projectile
   - UMAIgnore
+  - Clickable
   layers:
   - Default
   - TransparentFX

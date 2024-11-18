@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openAiApiKey: 
-  openAiProxyApiKey: 
-  openAiEndpoint: https://api.openai.com
+  openAiProxyApiKey: "sl;ieRtvpm~gwgda}FNeq}a[wvqsreNQYiVwMZKmzU[|}J\x84\x87vY\x86"
+  openAiEndpoint: https://api.pawan.krd/
   chatGptModel: 3
   useModelVariant16KTokens: 0
   chatGpt4TurboModelVersion: 0
-  azureApiKey: 
-  azureRegion: 
-  azureEndpoint: 
-  azureDeploymentName: 
+  azureApiKey: "IXVqIyK\x82fG:Z[uw;}Qc\\zDUTlWCTkDQdh\x89G:^\NUXUlsc`LEbe6oAK_ZYGMFNITYlOkOdX6\x86@DBORBQXVq|<i"
+  azureRegion: eastus
+  azureEndpoint: https://fyp.openai.azure.com/
+  azureDeploymentName: FYP
   geminiApiKey: 
   geminiModel: 0
   temperature: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   - 4K
   - game art
   guidingPromptsTexturesDisabled: 00000000
-  path: Assets/Generated/
+  path: Assets/Generated
   showInspectorButton: 1
   autoAcceptNewScripts: 0
   autoAcceptEdits: 0
