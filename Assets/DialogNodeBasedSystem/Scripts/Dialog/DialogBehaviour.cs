@@ -46,6 +46,7 @@ namespace cherrydev
 
         public DialogExternalFunctionsHandler ExternalFunctionsHandler { get; private set; }
         private bool isPanelClicked = false;
+        
 
         private void Awake()
         {
@@ -61,6 +62,7 @@ namespace cherrydev
         {
             HandleSentenceSkipping();
         }
+
 
         /// <summary>
         /// Setting dialogCharDelay float parameter
@@ -261,7 +263,7 @@ namespace cherrydev
         private IEnumerator WriteDialogTextRoutine(string text)
         {
             //Debug.Log("WriteDialogTextRoutine");
-            isCanSkippingText = false;
+            //isCanSkippingText = false;
             foreach (char textChar in text)
             {
                 if (isCurrentSentenceSkipped)
@@ -274,7 +276,7 @@ namespace cherrydev
 
                 yield return new WaitForSeconds(dialogCharDelay);
             }
-            isCanSkippingText = true;
+            //isCanSkippingText = true;
             yield return new WaitUntil(CheckNextSentenceKeyCodes);
             isPanelClicked = false;
             //Debug.Log("Panel button clicked");
