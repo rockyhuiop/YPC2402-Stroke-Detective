@@ -3067,6 +3067,7 @@ GameObject:
   - component: {fileID: 8410235029095375773}
   - component: {fileID: 1142200189226459989}
   - component: {fileID: 8070840248419397095}
+  - component: {fileID: 5243210707507725240}
   - component: {fileID: 2100901315087130343}
   m_Layer: 0
   m_Name: elderly
@@ -6406,6 +6407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 0}
   collider: {fileID: 0}
+  ColliderSet: 0
 --- !u!114 &8070840248419397095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6418,8 +6420,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe6f58599ecb4042840c3bb62e7e73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoseAnimator: {fileID: 0}
   CurrnetState: sit
+--- !u!114 &5243210707507725240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305174378598169680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a450fa3479d704c96b2241626be821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &2100901315087130343
 Animator:
   serializedVersion: 5
