@@ -9,7 +9,7 @@ public class SkinnedCollider : MonoBehaviour
     [SerializeField] MeshCollider collider;
     private Transform self;
     //if the mesh collider is set
-    private bool ColliderSet=false;
+    public bool ColliderSet=false;
     //set the mesh received from SkinnedMeshRenderer to mesh collider
     public void UpdateCollider() {
         Mesh colliderMesh = new Mesh();
@@ -32,7 +32,12 @@ public class SkinnedCollider : MonoBehaviour
     {
         if (!meshRenderer) {
             //find the skinned mesh render to get the mesh
-            meshRenderer=self.Find("UMARenderer").GetComponent<SkinnedMeshRenderer>();
+            try {
+                meshRenderer=self.Find("UMARenderer").GetComponent<SkinnedMeshRenderer>();
+            } catch{
+
+            }
+        } else {
             //set the mesh of mesh collider only once 
             if (!ColliderSet) {
                 UpdateCollider();
