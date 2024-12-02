@@ -18,10 +18,7 @@ public class ExpressionControl : MonoBehaviour
         //find the ExpressionScript if it is null (the ExpressionScript is not apper in the beginning, if set it in start(), it will be missing)
         if ( ExpressionScript == null ) {
             ExpressionScript = GetComponent<UMAExpressionPlayer>();
-        } else {
-            
-            HalfSmile(true);
-        }
+        } 
     }
     //smile normally
     public void FullySmile() {
