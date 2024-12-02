@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "FA33P3800061",
     "m_SelectedProcess": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "FA33P3800061",
+        "name": "com.DefaultCompany.StrokeDetective",
+        "processId": 25475,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,18 @@
             "deviceId": "FA33P3800061",
             "name": "com.DefaultCompany.StrokeDetective",
             "processId": 21854,
+            "exited": false
+        },
+        {
+            "deviceId": "FA33P3800061",
+            "name": "com.DefaultCompany.StrokeDetective",
+            "processId": 24490,
+            "exited": false
+        },
+        {
+            "deviceId": "FA33P3800061",
+            "name": "com.DefaultCompany.StrokeDetective",
+            "processId": 25475,
             "exited": false
         }
     ],

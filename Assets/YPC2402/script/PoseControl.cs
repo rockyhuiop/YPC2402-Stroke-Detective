@@ -46,6 +46,10 @@ public class PoseControl : MonoBehaviour
         animation_end=false;
         animation_start=false;
     }
+
+    public string GetPose(){
+        return CurrnetState;
+    }
     IEnumerator SetPoseCorr(string state){
         animation_start=true;
         //play the animation

@@ -16,20 +16,20 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -253.66663
-    y: 17.599937
+    x: -282.3333
+    y: 94.26666
     width: 190
-    height: 135
+    height: 155
   isDragging: 0
   isSelected: 0
   sentence:
     characterName: Old man
-    text: (Only the left side of their face moves. The right side remains drooping.)
+    text: (Only one side of their face moves. The other side remains drooping.)
     characterSprite: {fileID: 0}
   parentNode: {fileID: 4936782135289953885}
-  childNode: {fileID: 7923837212036623711}
-  isExternalFunc: 0
-  externalFunctionName: 
+  childNode: {fileID: 9172994762735975073}
+  isExternalFunc: 1
+  externalFunctionName: HalfSmile
 --- !u!114 &-8455854530336412942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1236.998
-    y: 552.9327
+    x: 1244.3303
+    y: 699.59863
     width: 190
     height: 135
   isDragging: 0
@@ -58,6 +58,37 @@ MonoBehaviour:
     characterSprite: {fileID: 21300000, guid: c03d0e70107745d48b9cc5f2abe74fe5, type: 3}
   parentNode: {fileID: 0}
   childNode: {fileID: 0}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &-6357234562717595705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 351.33377
+    y: 158.0001
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Old man
+    text: "Y-yeah... my... my left side... it\u2019s all... numb. I c-can\u2019t
+      move my arm..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 9172994762735975073}
+  childNode: {fileID: 7923837212036623711}
   isExternalFunc: 0
   externalFunctionName: 
 --- !u!114 &-5184584624021453599
@@ -76,8 +107,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -268.33313
-    y: 176.93309
+    x: -266.99933
+    y: 280.93304
     width: 190
     height: 135
   isDragging: 0
@@ -87,7 +118,37 @@ MonoBehaviour:
     text: My... na...name is... uh... Donald...
     characterSprite: {fileID: 0}
   parentNode: {fileID: 4936782135289953885}
-  childNode: {fileID: 7923837212036623711}
+  childNode: {fileID: 9172994762735975073}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &-3768278096823645739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: -1226.0002
+    y: 178.66655
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Old man
+    text: ...
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 0}
+  childNode: {fileID: 1308293477288671501}
   isExternalFunc: 0
   externalFunctionName: 
 --- !u!114 &-2790696347262530497
@@ -106,8 +167,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -832.9999
-    y: 209.93317
+    x: -826.33344
+    y: 356.5998
     width: 190
     height: 155
   isDragging: 0
@@ -120,6 +181,36 @@ MonoBehaviour:
   childNode: {fileID: 4936782135289953885}
   isExternalFunc: 1
   externalFunctionName: Test
+--- !u!114 &-2337189713573714873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 311.3337
+    y: 303.3334
+    width: 190
+    height: 155
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Old man
+    text: "I\u2019ll... uh... try..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 9172994762735975073}
+  childNode: {fileID: 7923837212036623711}
+  isExternalFunc: 1
+  externalFunctionName: LiftHandFail
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +221,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
-  m_Name: DemoDialogGraph 1
+  m_Name: StrokeTrueDialogGraph
   m_EditorClassIdentifier: 
   nodesList:
   - {fileID: -2790696347262530497}
@@ -145,6 +236,12 @@ MonoBehaviour:
   - {fileID: 1308293477288671501}
   - {fileID: 7923837212036623711}
   - {fileID: 4521464976304328118}
+  - {fileID: -3768278096823645739}
+  - {fileID: 9172994762735975073}
+  - {fileID: 3958932945368940529}
+  - {fileID: -6357234562717595705}
+  - {fileID: -2337189713573714873}
+  - {fileID: 5249515853652329166}
   nodeToDrawLineFrom: {fileID: 0}
   linePosition: {x: 0, y: 0}
 --- !u!114 &1175716626248544139
@@ -163,8 +260,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 588.6687
-    y: 193.26671
+    x: 832.6678
+    y: 509.2667
     width: 190
     height: 155
   isDragging: 0
@@ -195,15 +292,15 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -1153.0005
-    y: 228.33325
+    x: -1125.0005
+    y: 402.33325
     width: 190
     height: 115
   isDragging: 0
   isSelected: 0
   answers:
   - Hi there! Are you okay? You don't look well.
-  parentSentenceNode: {fileID: 0}
+  parentSentenceNode: {fileID: -3768278096823645739}
   childSentenceNodes:
   - {fileID: -2790696347262530497}
 --- !u!114 &3563645847101711405
@@ -222,8 +319,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -266.99963
-    y: 466.932
+    x: -327.66592
+    y: 662.9314
     width: 190
     height: 135
   isDragging: 0
@@ -233,6 +330,36 @@ MonoBehaviour:
     text: "I don\u2019t know... I feel... strange..."
     characterSprite: {fileID: 0}
   parentNode: {fileID: 4936782135289953885}
+  childNode: {fileID: 9172994762735975073}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &3958932945368940529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 361.334
+    y: 7.333374
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Old man
+    text: "I... I feel... numb... and my... uh... my arm... it\u2019s not... working..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 9172994762735975073}
   childNode: {fileID: 7923837212036623711}
   isExternalFunc: 0
   externalFunctionName: 
@@ -252,8 +379,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 306.00098
-    y: 255.60022
+    x: 405.3351
+    y: 668.2665
     width: 190
     height: 135
   isDragging: 0
@@ -281,8 +408,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 594.3345
-    y: 360.33325
+    x: 743.0013
+    y: 748.999
     width: 190
     height: 155
   isDragging: 0
@@ -313,8 +440,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -544.6663
-    y: 205.59985
+    x: -574.00006
+    y: 346.26654
     width: 190
     height: 175
   isDragging: 0
@@ -322,7 +449,7 @@ MonoBehaviour:
   answers:
   - Can you smile for me?
   - "What\u2019s your name? Can you tell me your name?"
-  - Can you stand up for me?
+  - Can you tell me what day it is
   - Are you in pain? Do you need water?
   parentSentenceNode: {fileID: -2790696347262530497}
   childSentenceNodes:
@@ -330,6 +457,36 @@ MonoBehaviour:
   - {fileID: -5184584624021453599}
   - {fileID: 8776957959574132249}
   - {fileID: 3563645847101711405}
+--- !u!114 &5249515853652329166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 278.6672
+    y: 457.33325
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Old man
+    text: "Stroke? I... I don\u2019t... know... I need... help..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 9172994762735975073}
+  childNode: {fileID: 7923837212036623711}
+  isExternalFunc: 0
+  externalFunctionName: 
 --- !u!114 &7923837212036623711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,8 +503,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 30.334106
-    y: 235
+    x: 153.6675
+    y: 796.3329
     width: 190
     height: 135
   isDragging: 0
@@ -356,7 +513,7 @@ MonoBehaviour:
     characterName: 
     text: Based on your observations, is this NPC having a stroke?
     characterSprite: {fileID: 0}
-  parentNode: {fileID: 3563645847101711405}
+  parentNode: {fileID: 3958932945368940529}
   childNode: {fileID: 4411136173186865135}
   isExternalFunc: 0
   externalFunctionName: 
@@ -376,17 +533,50 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -277.33325
-    y: 305.60028
+    x: -269.99936
+    y: 452.26697
     width: 190
     height: 135
   isDragging: 0
   isSelected: 0
   sentence:
     characterName: Old man
-    text: "I... um... I don\u2019t think so... My arm feels weird..."
+    text: "Day? Uh... um... I... I don\u2019t know... I can\u2019t... think..."
     characterSprite: {fileID: 0}
   parentNode: {fileID: 4936782135289953885}
-  childNode: {fileID: 7923837212036623711}
+  childNode: {fileID: 9172994762735975073}
   isExternalFunc: 0
   externalFunctionName: 
+--- !u!114 &9172994762735975073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1717f3c6dba9fa40844ddacac301510, type: 3}
+  m_Name: Answer Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: -6.6662292
+    y: 331.33347
+    width: 190
+    height: 175
+  isDragging: 0
+  isSelected: 0
+  answers:
+  - "Can you tell me more about how you\u2019re feeling?"
+  - Are you experiencing any numbness or weakness on one side of your body?
+  - Can you raise both of your arms?
+  - "I think you\u2019re having a stroke\u2014stay here, I\u2019ll call for help!"
+  parentSentenceNode: {fileID: 3563645847101711405}
+  childSentenceNodes:
+  - {fileID: 3958932945368940529}
+  - {fileID: -6357234562717595705}
+  - {fileID: -2337189713573714873}
+  - {fileID: 5249515853652329166}

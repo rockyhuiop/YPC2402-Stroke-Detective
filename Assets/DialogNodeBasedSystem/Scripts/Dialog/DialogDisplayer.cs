@@ -17,6 +17,7 @@ namespace cherrydev
             //HVRInputModule.Instance.AddCanvas(dialogCanvas);
         }
 
+
         private void OnEnable()
         {
             dialogBehaviour.AddListenerToDialogFinishedEvent(DisableDialogPanel);

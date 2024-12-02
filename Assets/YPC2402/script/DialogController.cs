@@ -9,15 +9,67 @@ public class DialogController : MonoBehaviour
     public GameObject correctSign;
     public GameObject wrongSign;
 
+    public Transform NPC;
+
     private void Start()
     {
         gameManager = GameObject.FindAnyObjectByType<GameManager>();
         dialogBehaviour.BindExternalFunction("Test", DebugExternal);
         dialogBehaviour.BindExternalFunction("showCorrectSign", showCorrectSign);
         dialogBehaviour.BindExternalFunction("showWrongSign", showWrongSign);
+        dialogBehaviour.BindExternalFunction("FullySmile", FullySmile);
+        dialogBehaviour.BindExternalFunction("HalfSmile", HalfSmile);
+        dialogBehaviour.BindExternalFunction("LiftHand", LiftHand);
+        dialogBehaviour.BindExternalFunction("LiftHandFail", LiftHandFail);
 
-        dialogBehaviour.StartDialog(dialogGraph);
+        //dialogBehaviour.StartDialog(dialogGraph);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            dialogBehaviour.StartDialog(dialogGraph);
+        }
+    }
+
+    public void FullySmile()
+    {
+        ExpressionControl expressionControl = NPC.GetComponent<ExpressionControl>();
+        expressionControl.FullySmile();
+    }
+
+    public void HalfSmile()
+    {
+        bool isLeft = Random.Range(0, 2) == 0;
+        ExpressionControl expressionControl = NPC.GetComponent<ExpressionControl>();
+        expressionControl.HalfSmile(isLeft);
+    }
+
+    public void LiftHand(){
+        PoseControl poseControl = NPC.GetComponent<PoseControl>();
+        string pose = poseControl.GetPose();
+        if(pose.Contains("sit")){
+            poseControl.SetPose("liftarm_sit");
+        }else if(pose.Contains("stand")){
+            poseControl.SetPose("liftarm_stand");
+        }else if(pose.Contains("liedown")){
+            poseControl.SetPose("liftarm_liedown");
+        }
+    }
+
+    public void LiftHandFail(){
+        PoseControl poseControl = NPC.GetComponent<PoseControl>();
+        string pose = poseControl.GetPose();
+        if(pose.Contains("sit")){
+            poseControl.SetPose("liftarm_sit_half");
+        }else if(pose.Contains("stand")){
+            poseControl.SetPose("liftarm_stand_half");
+        }else if(pose.Contains("liedown")){
+            poseControl.SetPose("liftarm_liedown_half");
+        }
+    }
+
 
     private void DebugExternal()
     {
