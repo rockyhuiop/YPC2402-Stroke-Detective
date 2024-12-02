@@ -7,6 +7,8 @@ public class PoseControl : MonoBehaviour
     private Animator PoseAnimator;
     //current pose
     [SerializeField] string CurrnetState;
+    bool animation_end = false;
+    bool animation_start = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,38 @@ public class PoseControl : MonoBehaviour
             PoseAnimator = GetComponent<Animator>();
         }
         //if current state not set
-        if (CurrnetState!=""&&!PoseAnimator.GetCurrentAnimatorStateInfo(0).IsName(CurrnetState)) {
+        if (CurrnetState!=""&&!PoseAnimator.GetCurrentAnimatorStateInfo(0).IsName(CurrnetState)&&!animation_end&&!animation_start) {
             //set the pose
-            PoseAnimator.Play(CurrnetState);
-            //update the collider (collider need to update manually if pose changed)
-            GetComponent<SkinnedCollider>().ColliderSet=false;
+            StartCoroutine(SetPoseCorr(CurrnetState));
         }
+    }
+    private AnimationClip FindAnimation(Animator animator, string name)
+    {
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == name)
+            {
+                return clip;
+            }
+        }
+
+        return null;
+    }
+    public void SetPose(string state) {
+        //set current animation state
+        CurrnetState = state;
+        //reset the variable for recording animation playing status (in order to let the update run the animation again)
+        animation_end=false;
+        animation_start=false;
+    }
+    IEnumerator SetPoseCorr(string state){
+        animation_start=true;
+        //play the animation
+        PoseAnimator.Play(state);
+        //wait for the animation end
+        yield return new WaitForSeconds(FindAnimation(PoseAnimator, state).length);
+        animation_end=true;
+        //update the collider (collider need to update manually if pose changed)
+        GetComponent<SkinnedCollider>().ColliderSet=false;
     }
 }

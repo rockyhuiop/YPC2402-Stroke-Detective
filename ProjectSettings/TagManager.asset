@@ -8,6 +8,8 @@ TagManager:
   - projectile
   - UMAIgnore
   - Clickable
+  - NPC
+  - Scoreboard
   layers:
   - Default
   - TransparentFX
