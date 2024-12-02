@@ -5,6 +5,7 @@
     "com.htc.upm.wave.openxr.toolkit.samples": "1.0.5",
     "com.meta.xr.simulator": "file:../Assets/com.meta.xr.simulator-68.0.0.tgz",
     "com.unity.2d.sprite": "1.0.0",
+    "com.unity.addressables": "1.21.21",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",

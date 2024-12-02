@@ -332,22 +332,22 @@ namespace HurricaneVR.Framework.ControllerInput
 
             if (SwapMovementAxis)
             {
-                if (RightController.ControllerType == HVRControllerType.Vive)
-                {
-                    if (RightController.TrackpadButtonState.Active)
-                        return RightController.TrackpadAxis;
-                    return Vector2.zero;
-                }
+                // if (RightController.ControllerType == HVRControllerType.Vive)
+                // {
+                //     if (RightController.TrackpadButtonState.Active)
+                //         return RightController.TrackpadAxis;
+                //     return Vector2.zero;
+                // }
 
                 return RightController.JoystickAxis;
             }
 
-            if (LeftController.ControllerType == HVRControllerType.Vive)
-            {
-                if (LeftController.TrackpadButtonState.Active)
-                    return LeftController.TrackpadAxis;
-                return Vector2.zero;
-            }
+            // if (LeftController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     if (LeftController.TrackpadButtonState.Active)
+            //         return LeftController.TrackpadAxis;
+            //     return Vector2.zero;
+            // }
 
             return LeftController.JoystickAxis;
         }
@@ -384,65 +384,65 @@ namespace HurricaneVR.Framework.ControllerInput
         {
             if (SwapMovementAxis)
             {
-                if (LeftController.ControllerType == HVRControllerType.Vive)
-                {
-                    if (Mathf.Abs(LeftController.TrackpadAxis.y) > .6f)
-                        return Vector2.zero;
+                // if (LeftController.ControllerType == HVRControllerType.Vive)
+                // {
+                //     if (Mathf.Abs(LeftController.TrackpadAxis.y) > .6f)
+                //         return Vector2.zero;
 
-                    if (LeftController.TrackpadButtonState.Active)
-                    {
-                        return LeftController.TrackpadAxis;
-                    }
+                //     if (LeftController.TrackpadButtonState.Active)
+                //     {
+                //         return LeftController.TrackpadAxis;
+                //     }
 
-                    return Vector2.zero;
-                }
+                //     return Vector2.zero;
+                // }
 
                 return LeftController.JoystickAxis;
             }
 
-            if (RightController.ControllerType == HVRControllerType.Vive)
-            {
-                if (Mathf.Abs(RightController.TrackpadAxis.y) > .6f)
-                    return Vector2.zero;
+            // if (RightController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     if (Mathf.Abs(RightController.TrackpadAxis.y) > .6f)
+            //         return Vector2.zero;
 
-                if (RightController.TrackpadButtonState.Active)
-                {
-                    return RightController.TrackpadAxis;
-                }
+            //     if (RightController.TrackpadButtonState.Active)
+            //     {
+            //         return RightController.TrackpadAxis;
+            //     }
 
-                return Vector2.zero;
-            }
+            //     return Vector2.zero;
+            // }
 
             return RightController.JoystickAxis;
         }
 
         protected virtual bool GetTeleportDeactivated()
         {
-            if (HVRInputManager.Instance.RightController.ControllerType == HVRControllerType.Vive)
-            {
-                return HVRController.GetButtonState(HVRHandSide.Right, HVRButtons.Menu).JustDeactivated;
-            }
+            // if (HVRInputManager.Instance.RightController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     return HVRController.GetButtonState(HVRHandSide.Right, HVRButtons.Menu).JustDeactivated;
+            // }
 
             return TeleportController.JoystickAxis.y > -.25f;
         }
 
         protected virtual bool GetTeleportActivated()
         {
-            if (HVRInputManager.Instance.RightController.ControllerType == HVRControllerType.Vive)
-            {
-                return HVRController.GetButtonState(HVRHandSide.Right, HVRButtons.Menu).Active;
-            }
+            // if (HVRInputManager.Instance.RightController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     return HVRController.GetButtonState(HVRHandSide.Right, HVRButtons.Menu).Active;
+            // }
 
             return TeleportController.JoystickAxis.y < -.5f && Mathf.Abs(TeleportController.JoystickAxis.x) < .30;
         }
 
         protected virtual bool GetSprinting()
         {
-            if (LeftController.ControllerType == HVRControllerType.Vive)
-            {
-                SprintRequiresDoubleClick = true;
-                return LeftController.TrackpadButtonState.JustActivated;
-            }
+            // if (LeftController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     SprintRequiresDoubleClick = true;
+            //     return LeftController.TrackpadButtonState.JustActivated;
+            // }
 
             SprintRequiresDoubleClick = false;
             if (RightController.ControllerType == HVRControllerType.WMR)
@@ -456,10 +456,10 @@ namespace HurricaneVR.Framework.ControllerInput
 
         protected virtual bool GetCrouch()
         {
-            if (RightController.ControllerType == HVRControllerType.Vive)
-            {
-                return RightController.TrackPadUp.JustActivated;
-            }
+            // if (RightController.ControllerType == HVRControllerType.Vive)
+            // {
+            //     return RightController.TrackPadUp.JustActivated;
+            // }
 
             if (RightController.ControllerType == HVRControllerType.WMR)
             {

@@ -1,3 +1,4 @@
+using HurricaneVR.Framework.Core.UI;
 using UnityEngine;
 
 namespace cherrydev
@@ -10,6 +11,11 @@ namespace cherrydev
         [Header("NODE PANELS")]
         [SerializeField] private SentencePanel dialogSentensePanel;
         [SerializeField] private AnswerPanel dialogAnswerPanel;
+        //[SerializeField] private Canvas dialogCanvas;
+
+        void Awake(){
+            //HVRInputModule.Instance.AddCanvas(dialogCanvas);
+        }
 
         private void OnEnable()
         {
@@ -32,6 +38,7 @@ namespace cherrydev
             dialogBehaviour.OnMaxAmountOfAnswerButtonsCalculated += dialogAnswerPanel.SetUpButtons;
 
             dialogBehaviour.OnAnswerNodeSetUp += SetUpAnswerDialogPanel;
+            //HVRInputModule.Instance.AddCanvas(dialogCanvas);
         }
 
         private void OnDisable()
@@ -53,6 +60,7 @@ namespace cherrydev
             dialogBehaviour.OnMaxAmountOfAnswerButtonsCalculated -= dialogAnswerPanel.SetUpButtons;
 
             dialogBehaviour.OnAnswerNodeSetUp -= SetUpAnswerDialogPanel;
+            //HVRInputModule.Instance.RemoveCanvas(dialogCanvas);
         }
 
         /// <summary>

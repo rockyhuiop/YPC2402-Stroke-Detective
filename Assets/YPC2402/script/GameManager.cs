@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
         Finish.SetActive(false);
         UpdateScoreboard();
     }
+
+
+
+    
     public void AddDone(bool isCorrect) {
         if (isCorrect) {
             Correct_NPC++;
