@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.htc.upm.wave.openxr": "1.0.5",
+    "com.htc.upm.wave.openxr.toolkit": "1.0.5",
+    "com.htc.upm.wave.openxr.toolkit.samples": "1.0.5",
     "com.meta.xr.simulator": "file:../Assets/com.meta.xr.simulator-68.0.0.tgz",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "2.5.2",
@@ -10,8 +13,10 @@
     "com.unity.timeline": "1.7.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.4",
+    "com.unity.xr.interaction.toolkit": "2.5.4",
     "com.unity.xr.management": "4.5.0",
     "com.unity.xr.oculus": "4.2.0",
+    "com.unity.xr.openxr": "1.11.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -43,5 +48,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Vive",
+      "url": "https://npm-registry.vive.com/",
+      "scopes": [
+        "com.htc.upm"
+      ]
+    }
+  ]
 }

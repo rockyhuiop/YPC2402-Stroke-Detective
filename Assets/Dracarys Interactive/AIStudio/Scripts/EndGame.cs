@@ -19,9 +19,9 @@ namespace DracarysInteractive.AIStudio
 
         private void endGame()
         {
-            if (EditorApplication.isPlaying)
-                EditorApplication.isPlaying = false;
-            else
+            // if (EditorApplication.isPlaying)
+            //     EditorApplication.isPlaying = false;
+            // else
                 Application.Quit(0);
         }
     }
