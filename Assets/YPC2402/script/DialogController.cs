@@ -11,6 +11,8 @@ public class DialogController : MonoBehaviour
 
     public Transform NPC;
 
+    bool hasStarted = false;
+
     private void Start()
     {
         gameManager = GameObject.FindAnyObjectByType<GameManager>();
@@ -27,9 +29,11 @@ public class DialogController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (hasStarted) return;
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             dialogBehaviour.StartDialog(dialogGraph);
+            hasStarted = true;
         }
     }
 
