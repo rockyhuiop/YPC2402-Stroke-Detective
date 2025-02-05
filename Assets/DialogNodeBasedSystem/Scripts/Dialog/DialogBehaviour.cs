@@ -173,6 +173,14 @@ namespace cherrydev
             }
 
             WriteDialogText(sentenceNode.GetSentenceText());
+            // split the sentence if it has a "("
+            string voiceText = sentenceNode.GetSentenceText();
+            int index = voiceText.IndexOf("(");
+            if (index > 0)
+            {
+                voiceText = voiceText.Substring(0, index);
+            }
+            SpeechManager.instance.SynthesizeSpeech(voiceText);
         }
 
         /// <summary>
