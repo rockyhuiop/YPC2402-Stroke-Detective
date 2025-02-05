@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
+using System.IO;
 using UnityEngine;
 using Microsoft.CognitiveServices.Speech;
 using System.Threading.Tasks;
+using Microsoft.CognitiveServices.Speech.Audio;
 
 public class CognitiveSpeech : MonoBehaviour
 {
@@ -12,7 +15,13 @@ public class CognitiveSpeech : MonoBehaviour
     [Tooltip("Your Azure Speech Service Region (e.g., westus)")]
     public string region = "eastasia";
 
+    private bool recording;
+
+    private byte[] bytes;
+
     private SpeechConfig speechConfig;
+
+    private AudioClip clip;
 
     public enum LanguageCode
     {
@@ -46,7 +55,6 @@ public class CognitiveSpeech : MonoBehaviour
         }
         speechConfig.SpeechSynthesisVoiceName = voiceName;
     }
-
     
 
     // Public method to convert text to speech
@@ -82,6 +90,45 @@ public class CognitiveSpeech : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Initiates speech recognition from the default microphone and logs the recognized text.
+    /// </summary>
+    public async Task<string> RecognizeSpeechAsync()
+    {
+        // Create an audio configuration using the default microphone
+        using (var audioConfig = AudioConfig.FromDefaultMicrophoneInput())
+        {
+            using (var recognizer = new SpeechRecognizer(speechConfig, audioConfig))
+            {
+                Debug.Log("Speak into your microphone...");
+                var result = await recognizer.RecognizeOnceAsync();
+
+                if (result.Reason == ResultReason.RecognizedSpeech)
+                {
+                    // Log recognized text
+                    Debug.Log("Recognized: " + result.Text);
+                    return result.Text;
+                }
+                else if (result.Reason == ResultReason.NoMatch)
+                {
+                    Debug.Log("Speech could not be recognized.");
+                }
+                else if (result.Reason == ResultReason.Canceled)
+                {
+                    var cancellation = CancellationDetails.FromResult(result);
+                    Debug.LogError("Speech recognition canceled: " + cancellation.Reason);
+
+                    if (cancellation.Reason == CancellationReason.Error)
+                    {
+                        Debug.LogError("Error details: " + cancellation.ErrorDetails);
+                    }
+                }
+            }
+        }
+        return "";
+    }
+
 
     // Method to play audio from byte array
     private void PlayAudio(byte[] audioData)

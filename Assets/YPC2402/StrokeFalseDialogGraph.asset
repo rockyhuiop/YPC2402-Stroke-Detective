@@ -16,10 +16,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 113.33388
-    y: 257.33325
+    x: 1403.3342
+    y: 499.33334
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -46,8 +46,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 119.333694
-    y: 448.66595
+    x: 1409.3337
+    y: 690.66614
     width: 190
     height: 155
   isDragging: 0
@@ -76,8 +76,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -234.66647
-    y: 245.99998
+    x: 1055.3337
+    y: 488.0001
     width: 190
     height: 115
   isDragging: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 116.00069
-    y: 688.6661
+    x: 1406.001
+    y: 930.666
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -139,8 +139,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 890.6689
-    y: 147.99991
+    x: 2180.67
+    y: 390.0001
     width: 190
     height: 155
   isDragging: 0
@@ -169,10 +169,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 27.33371
-    y: 48.66661
+    x: 1317.334
+    y: 290.66675
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -200,10 +200,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 846.0018
-    y: 685.99945
+    x: 2136.0024
+    y: 927.9995
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -263,8 +263,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1811.3363
-    y: 101.33322
+    x: 3101.3374
+    y: 343.33337
     width: 190
     height: 155
   isDragging: 0
@@ -297,8 +297,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 520.667
-    y: 310.66656
+    x: 1810.667
+    y: 552.6669
     width: 190
     height: 115
   isDragging: 0
@@ -330,10 +330,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -529.9996
-    y: 219.3332
+    x: 760.00055
+    y: 461.33334
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -361,8 +361,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1831.3363
-    y: 451.3327
+    x: 3121.3374
+    y: 693.3329
     width: 190
     height: 155
   isDragging: 0
@@ -394,10 +394,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 836.6683
-    y: 475.99908
+    x: 2126.669
+    y: 717.99927
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -425,8 +425,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -795.99945
-    y: 121.33334
+    x: 494.00012
+    y: 363.3335
     width: 190
     height: 115
   isDragging: 0
@@ -452,8 +452,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1426.6693
-    y: 349.33313
+    x: 2784.003
+    y: 586
     width: 190
     height: 115
   isDragging: 0
@@ -481,10 +481,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1203.336
-    y: 343.99994
+    x: 2493.336
+    y: 586.0001
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -511,10 +511,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -1081.3312
-    y: 20.666672
+    x: 208.66791
+    y: 262.6668
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -541,10 +541,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 845.33527
-    y: 330.66656
+    x: 2135.336
+    y: 572.6669
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:

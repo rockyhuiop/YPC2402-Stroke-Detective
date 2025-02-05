@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 public class SpeechManager : MonoBehaviour
@@ -25,5 +27,11 @@ public class SpeechManager : MonoBehaviour
     public void SynthesizeSpeech(string text)
     {
         _ = cognitiveSpeech.SynthesizeSpeech(text);
+    }
+
+    public async void RecognizeSpeechAsync(TMP_Text textUI)
+    {
+        textUI.text = "Listening...";
+        textUI.text = await cognitiveSpeech.RecognizeSpeechAsync();
     }
 }
