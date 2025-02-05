@@ -8,30 +8,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
-    x: 926.6667
-    y: 234.66667
-    width: 564
-    height: 635.3334
-  m_ShowMode: 0
-  m_Title: NuGet For Unity
-  m_RootView: {fileID: 4}
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_Maximized: 0
---- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -43,63 +19,12 @@ MonoBehaviour:
     width: 1706.6667
     height: 976
   m_ShowMode: 4
-  m_Title: Project
-  m_RootView: {fileID: 5}
+  m_Title: Console
+  m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: NugetWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 564
-    height: 635.3334
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 3}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 564
-    height: 635.3334
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  vertical: 0
-  controlID: 4331
-  draggingID: 0
---- !u!114 &5
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +37,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 6}
-  - {fileID: 8}
-  - {fileID: 7}
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -127,7 +52,7 @@ MonoBehaviour:
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &6
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &7
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +95,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &8
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,8 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 9}
-  - {fileID: 14}
+  - {fileID: 6}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -194,9 +119,9 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 4117
+  controlID: 162
   draggingID: 0
---- !u!114 &9
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,20 +134,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+  - {fileID: 7}
   - {fileID: 10}
-  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1156.6666
+    width: 1405.3334
     height: 926
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 4118
+  controlID: 163
   draggingID: 0
---- !u!114 &10
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,20 +160,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 11}
-  - {fileID: 12}
+  - {fileID: 8}
+  - {fileID: 9}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1156.6666
+    width: 1405.3334
     height: 642
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 4119
+  controlID: 164
   draggingID: 0
---- !u!114 &11
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,16 +190,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 302
+    width: 366.66666
     height: 642
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 13}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &12
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,20 +214,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 302
+    x: 366.66666
     y: 0
-    width: 854.6666
+    width: 1038.6667
     height: 642
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 18}
-  - {fileID: 19}
-  - {fileID: 20}
+  - {fileID: 14}
+  - {fileID: 15}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &13
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,26 +237,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 642
-    width: 1156.6666
+    width: 1405.3334
     height: 284
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 16}
-  - {fileID: 21}
-  - {fileID: 22}
-  - {fileID: 23}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &14
+  - {fileID: 12}
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 19}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,1759 +271,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1156.6666
+    x: 1405.3334
     y: 0
-    width: 550
+    width: 301.33325
     height: 926
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 24}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 24}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 38775846, guid: 8dc1be91775c4bb469f6b74cef450eaa, type: 3}
-  m_Name: NuGetForUnity
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: NuGet For Unity
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 926.6667
-    y: 234.66667
-    width: 564
-    height: 614.3334
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  defaultIcon: {fileID: 2800000, guid: eec19781926cd2248b7c9abfde8db555, type: 3}
-  hasRefreshed: 1
-  numberToSkip: 0
-  serializableAvailablePackages:
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 1
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      - <FullVersion>k__BackingField: 1.24.0
-      - <FullVersion>k__BackingField: 1.23.0
-      - <FullVersion>k__BackingField: 1.22.0
-      - <FullVersion>k__BackingField: 1.21.0
-      - <FullVersion>k__BackingField: 1.20.0
-      - <FullVersion>k__BackingField: 1.19.0
-      - <FullVersion>k__BackingField: 1.18.0
-      - <FullVersion>k__BackingField: 1.17.0
-      - <FullVersion>k__BackingField: 1.16.0
-      - <FullVersion>k__BackingField: 1.15.0
-      - <FullVersion>k__BackingField: 1.14.0
-      - <FullVersion>k__BackingField: 1.13.0
-      - <FullVersion>k__BackingField: 1.12.1
-      - <FullVersion>k__BackingField: 1.12.0
-      - <FullVersion>k__BackingField: 1.11.0
-      - <FullVersion>k__BackingField: 1.10.0
-      - <FullVersion>k__BackingField: 1.9.0
-      - <FullVersion>k__BackingField: 1.8.0
-      - <FullVersion>k__BackingField: 1.7.0
-      - <FullVersion>k__BackingField: 1.6.0
-      - <FullVersion>k__BackingField: 1.5.1
-      - <FullVersion>k__BackingField: 1.5.0
-      - <FullVersion>k__BackingField: 1.4.2
-      - <FullVersion>k__BackingField: 1.4.0
-      - <FullVersion>k__BackingField: 1.3.1
-      - <FullVersion>k__BackingField: 1.3.0
-      - <FullVersion>k__BackingField: 1.2.0
-      - <FullVersion>k__BackingField: 1.1.0
-      - <FullVersion>k__BackingField: 1.0.1
-      - <FullVersion>k__BackingField: 1.0.0
-      - <FullVersion>k__BackingField: 0.6.0
-      - <FullVersion>k__BackingField: 0.5.0
-      - <FullVersion>k__BackingField: 0.4.0
-      - <FullVersion>k__BackingField: 0.2.12733
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: "This NuGet package provides native and managed
-        libraries for the Microsoft Cognitive Services Speech SDK.\n      Documentation
-        is available at https://aka.ms/csspeech."
-      <TotalDownloads>k__BackingField: 4061977
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.Vision.ComputerVision
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 7.0.1
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.vision.computervision/7.0.1/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 7.0.1
-      - <FullVersion>k__BackingField: 7.0.0
-      - <FullVersion>k__BackingField: 6.0.0
-      - <FullVersion>k__BackingField: 5.0.0
-      - <FullVersion>k__BackingField: 4.0.0
-      - <FullVersion>k__BackingField: 3.4.0
-      - <FullVersion>k__BackingField: 3.3.0
-      - <FullVersion>k__BackingField: 3.2.0
-      - <FullVersion>k__BackingField: 2.1.0
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.1.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This client library provides access to the Microsoft
-        Cognitive Services ComputerVision APIs.
-      <TotalDownloads>k__BackingField: 4440827
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/7.0.1/license
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.Vision.ComputerVision
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 3.0.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.language.luis.runtime/3.0.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 3.0.0
-      - <FullVersion>k__BackingField: 2.1.0
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.0.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: Provides API functions for consuming the Microsoft
-        Azure Cognitive Services LUIS Runtime API.
-      <TotalDownloads>k__BackingField: 2845375
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/3.0.0/license
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Remoteconversation
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      - <FullVersion>k__BackingField: 1.24.0
-      - <FullVersion>k__BackingField: 1.23.0
-      - <FullVersion>k__BackingField: 1.22.0
-      - <FullVersion>k__BackingField: 1.21.0
-      - <FullVersion>k__BackingField: 1.20.0
-      - <FullVersion>k__BackingField: 1.19.0
-      - <FullVersion>k__BackingField: 1.18.0
-      - <FullVersion>k__BackingField: 1.17.0
-      - <FullVersion>k__BackingField: 1.16.0
-      - <FullVersion>k__BackingField: 1.15.0
-      - <FullVersion>k__BackingField: 1.14.0
-      - <FullVersion>k__BackingField: 1.13.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This SDK allows you to use the Microsoft Cognitive
-        Speech Service for remote conversation. See https://aka.ms/csspeech for more
-        information.
-      <TotalDownloads>k__BackingField: 59554
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.Remoteconversation/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.CognitiveServices.Speech.Remoteconversation
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Azure.ResourceManager.CognitiveServices
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.4.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/azure.resourcemanager.cognitiveservices/1.4.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.4.0
-      - <FullVersion>k__BackingField: 1.3.4
-      - <FullVersion>k__BackingField: 1.3.3
-      - <FullVersion>k__BackingField: 1.3.2
-      - <FullVersion>k__BackingField: 1.3.1
-      - <FullVersion>k__BackingField: 1.3.0
-      - <FullVersion>k__BackingField: 1.2.1
-      - <FullVersion>k__BackingField: 1.2.0
-      - <FullVersion>k__BackingField: 1.1.0
-      - <FullVersion>k__BackingField: 1.0.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: Microsoft Azure Resource Manager client SDK for
-        Azure resource provider Microsoft.CognitiveServices.
-      <TotalDownloads>k__BackingField: 592305
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Azure.ResourceManager.CognitiveServices/1.4.0/license
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.CognitiveServices_1.4.0/sdk/cognitiveservices/Azure.ResourceManager.CognitiveServices/README.md
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Azure.ResourceManager.CognitiveServices
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.CLI
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      - <FullVersion>k__BackingField: 1.24.0
-      - <FullVersion>k__BackingField: 1.23.0
-      - <FullVersion>k__BackingField: 1.22.0
-      - <FullVersion>k__BackingField: 1.21.0
-      - <FullVersion>k__BackingField: 1.20.0
-      - <FullVersion>k__BackingField: 1.19.0
-      - <FullVersion>k__BackingField: 1.18.0
-      - <FullVersion>k__BackingField: 1.17.0
-      - <FullVersion>k__BackingField: 1.16.0
-      - <FullVersion>k__BackingField: 1.15.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: Speech CLI (SPX) is a command line tool for using
-        the Speech service without writing any code. See https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview
-        for more information.
-      <TotalDownloads>k__BackingField: 51271
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.CLI/1.42.0/license
-      <ProjectUrl>k__BackingField: https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.CognitiveServices.Speech.CLI
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.ContentModerator
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 2.0.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.contentmoderator/2.0.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.0.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This client library provides access to the Microsoft
-        Cognitive Services Content Moderator APIs.
-      <TotalDownloads>k__BackingField: 1259495
-      <LicenseUrl>k__BackingField: https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.ContentModerator
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Extension.ONNX.Runtime
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This NuGet package provides native and managed
-        libraries to use the ONNX runtime with the Microsoft Cognitive Services Speech
-        SDK.
-      <TotalDownloads>k__BackingField: 42777
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.Extension.ONNX.Runtime/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK extension
-        to use ONNX runtime
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK extension to
-        use ONNX runtime
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Xamarin.iOS
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.25.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      - <FullVersion>k__BackingField: 1.24.0
-      - <FullVersion>k__BackingField: 1.23.0
-      - <FullVersion>k__BackingField: 1.22.0
-      - <FullVersion>k__BackingField: 1.21.0
-      - <FullVersion>k__BackingField: 1.20.0
-      - <FullVersion>k__BackingField: 1.19.0
-      - <FullVersion>k__BackingField: 1.18.0
-      - <FullVersion>k__BackingField: 1.17.0
-      - <FullVersion>k__BackingField: 1.16.0
-      - <FullVersion>k__BackingField: 1.15.0
-      - <FullVersion>k__BackingField: 1.14.0
-      - <FullVersion>k__BackingField: 1.13.0
-      - <FullVersion>k__BackingField: 1.12.1
-      - <FullVersion>k__BackingField: 1.12.0
-      - <FullVersion>k__BackingField: 1.11.0
-      - <FullVersion>k__BackingField: 1.10.0
-      - <FullVersion>k__BackingField: 1.9.0
-      - <FullVersion>k__BackingField: 1.8.0
-      - <FullVersion>k__BackingField: 1.7.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: "This NuGet package provides native and managed
-        libraries for Xamarin iOS with bitcode enabled.\n      Documentation is available
-        at https://aka.ms/csspeech."
-      <TotalDownloads>k__BackingField: 30417
-      <LicenseUrl>k__BackingField: https://aka.ms/csspeech/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK for Xamarin
-        iOS
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK for Xamarin
-        iOS
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Extension.Embedded.TTS
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This NuGet package provides native and managed
-        libraries to use embedded speech synthesis with the Microsoft Cognitive Services
-        Speech SDK.
-      <TotalDownloads>k__BackingField: 27692
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.Extension.Embedded.TTS/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK extension
-        to use embedded speech synthesis
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK extension to
-        use embedded speech synthesis
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Extension.Embedded.SR
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This NuGet package provides native and managed
-        libraries to use embedded speech recognition with the Microsoft Cognitive
-        Services Speech SDK.
-      <TotalDownloads>k__BackingField: 25968
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.Extension.Embedded.SR/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK extension
-        to use embedded speech recognition
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK extension to
-        use embedded speech recognition
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 3.1.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.language.luis.authoring/3.1.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 3.1.0
-      - <FullVersion>k__BackingField: 3.0.0
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.0.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: Provides API functions for consuming the Microsoft
-        Azure Cognitive Services LUIS Authoring API.
-      <TotalDownloads>k__BackingField: 411675
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/3.1.0/license
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech.Extension.Telemetry
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This NuGet package provides native and managed
-        libraries to use the telemetry with the Microsoft Cognitive Services Speech
-        SDK.
-      <TotalDownloads>k__BackingField: 17526
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.Extension.Telemetry/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK extension
-        to use telemetry
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK extension to
-        use telemetry
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 2.0.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.vision.customvision.prediction/2.0.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.0.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This client library provides access to the Microsoft
-        Cognitive Services CustomVision Prediction APIs.
-      <TotalDownloads>k__BackingField: 456731
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/2.0.0/license
-      <ProjectUrl>k__BackingField: http://customvision.ai/
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction
-      <DownloadUrl>k__BackingField: 
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.Azure.CognitiveServices.Search.WebSearch
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 2.0.0
-      <IsManuallyInstalled>k__BackingField: 0
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: https://api.nuget.org/v3-flatcontainer/microsoft.azure.cognitiveservices.search.websearch/2.0.0/icon
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 2.0.0
-      - <FullVersion>k__BackingField: 1.2.0
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: This client library provides access to the Microsoft
-        Cognitive Services Web Search API.
-      <TotalDownloads>k__BackingField: 306479
-      <LicenseUrl>k__BackingField: https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE
-      <ProjectUrl>k__BackingField: https://github.com/Azure/azure-sdk-for-net
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: Microsoft.Azure.CognitiveServices.Search.WebSearch
-      <DownloadUrl>k__BackingField: 
-  serializableToInstallPackages: []
-  serializableUpdatePackages:
-  - packageLocal:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSource:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageType: 2
-    packageV2:
-      <Id>k__BackingField: 
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 
-      <IsManuallyInstalled>k__BackingField: 0
-      icon: {fileID: 0}
-      <DownloadUrl>k__BackingField: 
-      <IconUrl>k__BackingField: 
-      <RepositoryBranch>k__BackingField: 
-      <Dependencies>k__BackingField: []
-      <Authors>k__BackingField: []
-      <Description>k__BackingField: 
-      <TotalDownloads>k__BackingField: 0
-      <LicenseUrl>k__BackingField: 
-      <ProjectUrl>k__BackingField: 
-      <ReleaseNotes>k__BackingField: 
-      <RepositoryCommit>k__BackingField: 
-      <RepositoryType>k__BackingField: 0
-      <RepositoryUrl>k__BackingField: 
-      <Summary>k__BackingField: 
-      <Title>k__BackingField: 
-      packageSourceV2:
-        <Name>k__BackingField: 
-        <SavedPath>k__BackingField: 
-        <SavedProtocolVersion>k__BackingField: 
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 0
-      versions: []
-    packageV3:
-      <Id>k__BackingField: Microsoft.CognitiveServices.Speech
-      <PackageVersion>k__BackingField:
-        <FullVersion>k__BackingField: 1.42.0
-      <IsManuallyInstalled>k__BackingField: 1
-      dependencies: []
-      dependenciesFetched: 0
-      icon: {fileID: 0}
-      iconUrl: 
-      packageSource:
-        <Name>k__BackingField: nuget.org
-        <SavedPath>k__BackingField: https://api.nuget.org/v3/index.json
-        <SavedProtocolVersion>k__BackingField: 
-        <UpdateSearchBatchSize>k__BackingField: 20
-        <UserName>k__BackingField: 
-        <SavedPassword>k__BackingField: 
-        <CredentialsStoredInExternalFile>k__BackingField: 0
-        <IsEnabled>k__BackingField: 1
-      <Versions>k__BackingField:
-      - <FullVersion>k__BackingField: 1.42.0
-      - <FullVersion>k__BackingField: 1.41.1
-      - <FullVersion>k__BackingField: 1.40.0
-      - <FullVersion>k__BackingField: 1.38.0
-      - <FullVersion>k__BackingField: 1.37.0
-      - <FullVersion>k__BackingField: 1.36.0
-      - <FullVersion>k__BackingField: 1.35.0
-      - <FullVersion>k__BackingField: 1.34.1
-      - <FullVersion>k__BackingField: 1.34.0
-      - <FullVersion>k__BackingField: 1.33.0
-      - <FullVersion>k__BackingField: 1.32.1
-      - <FullVersion>k__BackingField: 1.31.0
-      - <FullVersion>k__BackingField: 1.30.0
-      - <FullVersion>k__BackingField: 1.29.0
-      - <FullVersion>k__BackingField: 1.28.0
-      - <FullVersion>k__BackingField: 1.27.0
-      - <FullVersion>k__BackingField: 1.26.0
-      - <FullVersion>k__BackingField: 1.25.0
-      - <FullVersion>k__BackingField: 1.24.2
-      - <FullVersion>k__BackingField: 1.24.1
-      - <FullVersion>k__BackingField: 1.24.0
-      - <FullVersion>k__BackingField: 1.23.0
-      - <FullVersion>k__BackingField: 1.22.0
-      - <FullVersion>k__BackingField: 1.21.0
-      - <FullVersion>k__BackingField: 1.20.0
-      - <FullVersion>k__BackingField: 1.19.0
-      - <FullVersion>k__BackingField: 1.18.0
-      - <FullVersion>k__BackingField: 1.17.0
-      - <FullVersion>k__BackingField: 1.16.0
-      - <FullVersion>k__BackingField: 1.15.0
-      - <FullVersion>k__BackingField: 1.14.0
-      - <FullVersion>k__BackingField: 1.13.0
-      - <FullVersion>k__BackingField: 1.12.1
-      - <FullVersion>k__BackingField: 1.12.0
-      - <FullVersion>k__BackingField: 1.11.0
-      - <FullVersion>k__BackingField: 1.10.0
-      - <FullVersion>k__BackingField: 1.9.0
-      - <FullVersion>k__BackingField: 1.8.0
-      - <FullVersion>k__BackingField: 1.7.0
-      - <FullVersion>k__BackingField: 1.6.0
-      - <FullVersion>k__BackingField: 1.5.1
-      - <FullVersion>k__BackingField: 1.5.0
-      - <FullVersion>k__BackingField: 1.4.2
-      - <FullVersion>k__BackingField: 1.4.0
-      - <FullVersion>k__BackingField: 1.3.1
-      - <FullVersion>k__BackingField: 1.3.0
-      - <FullVersion>k__BackingField: 1.2.0
-      - <FullVersion>k__BackingField: 1.1.0
-      - <FullVersion>k__BackingField: 1.0.1
-      - <FullVersion>k__BackingField: 1.0.0
-      - <FullVersion>k__BackingField: 0.6.0
-      - <FullVersion>k__BackingField: 0.5.0
-      - <FullVersion>k__BackingField: 0.4.0
-      - <FullVersion>k__BackingField: 0.2.12733
-      <Authors>k__BackingField:
-      - Microsoft
-      <Description>k__BackingField: "This NuGet package provides native and managed
-        libraries for the Microsoft Cognitive Services Speech SDK.\n      Documentation
-        is available at https://aka.ms/csspeech."
-      <TotalDownloads>k__BackingField: 4061977
-      <LicenseUrl>k__BackingField: https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/1.42.0/license
-      <ProjectUrl>k__BackingField: https://aka.ms/csspeech
-      <Summary>k__BackingField: Microsoft Cognitive Services Speech SDK
-      <Title>k__BackingField: Microsoft Cognitive Services Speech SDK
-      <DownloadUrl>k__BackingField: 
---- !u!114 &16
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2120,7 +304,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 714.6667
-    width: 1155.6666
+    width: 1404.3334
     height: 263
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2143,7 +327,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SpeechSDK
+    - Assets/YPC2402
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2151,16 +335,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SpeechSDK
+  - Assets/YPC2402
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\SuperbUlife\YPC2402\YPC2402-Stroke-Detective\StrokeDetective
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 401}
-    m_SelectedIDs: 186c0100
-    m_LastClickedID: 93208
-    m_ExpandedIDs: 00000000465e0100485e01004a5e01004c5e01004e5e0100505e0100525e0100545e0100565e0100585e01005a5e01005c5e01005e5e0100605e0100625e0100645e0100665e0100685e01006a5e01006c5e01006e5e0100705e0100725e0100745e0100765e0100785e0100186c01001c6c01002c6c01004c6c010000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 573}
+    m_SelectedIDs: f45e0100
+    m_LastClickedID: 89844
+    m_ExpandedIDs: 00000000e85e0100ea5e0100ec5e0100ee5e0100f05e0100f25e0100f45e0100f65e0100f85e0100fa5e0100fc5e0100fe5e0100005f0100025f0100045f0100065f0100085f01000a5f01000c5f01000e5f0100105f0100125f0100145f0100165f0100185f01001a5f010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2176,7 +360,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -2188,7 +372,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000465e0100485e01004a5e01004c5e01004e5e0100505e0100525e0100545e0100565e0100585e01005a5e01005c5e01005e5e0100605e0100625e0100645e0100665e0100685e01006a5e01006c5e01006e5e0100705e0100725e0100745e0100765e0100785e0100
+    m_ExpandedIDs: 00000000e85e0100ea5e0100ec5e0100ee5e0100f05e0100f25e0100f45e0100f65e0100f85e0100fa5e0100fc5e0100fe5e0100005f0100025f0100045f0100065f0100085f01000a5f01000c5f01000e5f0100105f0100125f0100145f0100165f0100185f01001a5f0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2213,10 +397,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000f02c0a00b0400100446d0300fe50fcffca8a0000
+    m_SelectedInstanceIDs: be42fbff
+    m_LastClickedInstanceID: -310594
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000f02c0a00b0400100446d0300fe50fcffca8a00006a8b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2244,7 +428,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &17
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2266,7 +450,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 72.66667
-    width: 301
+    width: 365.66666
     height: 621
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2280,26 +464,26 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 4289ffff4a89ffff26fbffff44a1000052c0000052d2000024d400008cd7000080dd0000e6e300004ce50000cce8000096e90000380101007c030100c4080100
+      scrollPos: {x: 0, y: 184}
+      m_SelectedIDs: be42fbff
+      m_LastClickedID: -310594
+      m_ExpandedIDs: fc83fdff1c94fdff26fbffffdca1000026b10000e2cc00001ed8000012de000078e40000a0e40000dee500005ee900002aea0000a4f00000160401001a040100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: GameObject
+        m_OriginalName: GameObject
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -158692
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -2307,7 +491,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &18
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2327,9 +511,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 302
+    x: 366.6667
     y: 72.66667
-    width: 852.6666
+    width: 1036.6667
     height: 621
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2676,9 +860,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 22.996304, y: 8.957758, z: 20.756691}
+    m_Target: {x: 16.143242, y: 10.257917, z: 10.370102}
     speed: 2
-    m_Value: {x: 22.996304, y: 8.957758, z: 20.756691}
+    m_Value: {x: 16.143242, y: 10.257917, z: 10.370102}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2724,13 +908,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.024797345, y: -0.52299714, z: 0.014704178, w: -0.8527171}
+    m_Target: {x: -0.054464195, y: -0.71549356, z: -0.054693058, w: 0.6955584}
     speed: 2
-    m_Value: {x: -0.024778968, y: -0.5226096, z: 0.014693282, w: -0.8520852}
+    m_Value: {x: -0.05441822, y: -0.7148896, z: -0.05464689, w: 0.69497126}
   m_Size:
-    m_Target: 4.3301272
+    m_Target: 0.07819641
     speed: 2
-    m_Value: 4.3301272
+    m_Value: 0.07819641
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2755,7 +939,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &19
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2775,9 +959,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 302
+    x: 366.6667
     y: 72.66667
-    width: 852.6666
+    width: 1036.6667
     height: 621
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2795,7 +979,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 852.6666, y: 600}
+  m_TargetSize: {x: 1555.0001, y: 900}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -2810,10 +994,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -284.22223
-    m_HBaseRangeMax: 284.22223
-    m_VBaseRangeMin: -200
-    m_VBaseRangeMax: 200
+    m_HBaseRangeMin: -518.3334
+    m_HBaseRangeMax: 518.3334
+    m_VBaseRangeMin: -300
+    m_VBaseRangeMax: 300
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -2831,29 +1015,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 852.6666
+      width: 1036.6667
       height: 600
     m_Scale: {x: 1.5, y: 1.5}
-    m_Translation: {x: 426.3333, y: 300.00003}
+    m_Translation: {x: 518.3334, y: 300.00003}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -284.2222
+      x: -345.55557
       y: -200.00002
-      width: 568.4444
+      width: 691.11115
       height: 400
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1279, y: 931.5}
+  m_LastWindowPixelSize: {x: 1555.0001, y: 931.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: -1
   m_RenderTexture: {fileID: 0}
---- !u!114 &20
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2876,7 +1060,7 @@ MonoBehaviour:
     x: 302
     y: 72.66667
     width: 852.6666
-    height: 708.3333
+    height: 621
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2887,7 +1071,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &21
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2909,7 +1093,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 714.6667
-    width: 1155.6666
+    width: 1404.3334
     height: 263
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2921,7 +1105,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &22
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2957,8 +1141,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -30386
---- !u!114 &23
+  m_LastSelectedObjectID: -310594
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3045,7 +1229,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &24
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3065,9 +1249,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1156.6667
+    x: 1405.3334
     y: 72.66667
-    width: 549
+    width: 300.33325
     height: 905
   m_SerializedDataModeController:
     m_DataMode: 0
