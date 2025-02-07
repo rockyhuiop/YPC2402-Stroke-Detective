@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: 33aa567be8534e2e9b89fcde05be9d2e
-labels:
-- NuGetForUnity
+guid: 448d775a616b29b489706be2ef8aaab6
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -18,71 +16,58 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        'Exclude ': 1
-        Exclude Android: 1
-        Exclude Bratwurst: 1
-        Exclude CloudRendering: 1
+        Exclude Android: 0
         Exclude Editor: 1
-        Exclude EmbeddedLinux: 1
-        Exclude GameCoreScarlett: 1
-        Exclude GameCoreXboxOne: 1
         Exclude Linux64: 1
         Exclude OSXUniversal: 1
-        Exclude PS4: 1
-        Exclude PS5: 1
-        Exclude QNX: 1
-        Exclude Stadia: 1
-        Exclude Switch: 1
-        Exclude VisionOS: 1
-        Exclude WebGL: 1
         Exclude Win: 1
         Exclude Win64: 1
-        Exclude WindowsStoreApps: 1
-        Exclude XboxOne: 1
-        Exclude iOS: 1
-        Exclude tvOS: 1
+        Exclude iOS: 0
+  - first:
+      Android: Android
+    second:
+      enabled: 1
+      settings: {}
   - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
     second:
-      enabled: 1
+      enabled: 0
       settings:
+        CPU: x86_64
         DefaultValueInitialized: true
-        OS: Windows
   - first:
       Standalone: Linux64
     second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: None
   - first:
       Standalone: OSXUniversal
     second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: None
   - first:
       Standalone: Win
     second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: None
   - first:
       Standalone: Win64
     second:
-      enabled: 1
-      settings:
-        CPU: x86_64
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: None
   - first:
       iPhone: iOS
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   userData: 
   assetBundleName: 

@@ -1,14 +1,94 @@
 using System;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using UnityEngine.Networking;
-using Azure;  
-using Azure.AI.OpenAI;  
-using Azure.Identity;  
-using OpenAI.Chat;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using UnityEngine;
 using TMPro;
+
+// ChatbotService handles sending the multi-round conversation HTTP request.
+public class ChatbotService
+{
+    // This function sends the conversation history to the API and returns the chatbot's reply.
+    public async Task<string> GetChatbotReply(List<(string Role, string Content)> conversationHistory)
+    {
+        // System instruction message for the assistant.
+        var assistantInstruction = "You are an old man with a stroke currently. " +
+            "Now, the user is trying to find out whether you have a stroke or not. " +
+            "The user is going to ask some questions to you to see if there are any hints of stroke. " +
+            "You may reply correspondingly to the user's question. ";
+
+        // Ensure the conversation history exists.
+        if (conversationHistory == null)
+        {
+            conversationHistory = new List<(string Role, string Content)>();
+        }
+
+        // Add the system message at the beginning if it hasn't been added yet.
+        if (conversationHistory.Count == 0 || conversationHistory[0].Role != "system")
+        {
+            conversationHistory.Insert(0, ("system", assistantInstruction));
+        }
+
+        // Build the messages array for the JSON payload.
+        var messagesArray = new JArray();
+        foreach (var (role, content) in conversationHistory)
+        {
+            var messageObject = new JObject
+            {
+                { "role", role },
+                { "content", content }
+            };
+            messagesArray.Add(messageObject);
+        }
+
+        // Construct the JSON payload with all required properties.
+        JObject payload = new JObject
+        {
+            { "messages", messagesArray },
+            { "model", "deepseek-chat" },
+            { "frequency_penalty", 0 },
+            { "max_tokens", 2048 },
+            { "presence_penalty", 0 },
+            { "response_format", new JObject(new JProperty("type", "text")) },
+            { "stop", null },
+            { "stream", false },
+            { "stream_options", null },
+            { "temperature", 1 },
+            { "top_p", 1 },
+            { "tools", null },
+            { "tool_choice", "none" },
+            { "logprobs", false },
+            { "top_logprobs", null }
+        };
+
+        // Create an HttpClient instance and prepare the request.
+        using (var client = new HttpClient())
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.deepseek.com/chat/completions");
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Authorization", "Bearer sk-8d933c54c1584f09af8bee7c0dfc4a0f");
+
+            // Specify the encoding as UTF-8 to ensure proper handling of the payload.
+            var contentHttp = new StringContent(payload.ToString(), System.Text.Encoding.UTF8, "application/json");
+            Debug.Log("Request payload: " + payload.ToString());
+            request.Content = contentHttp;
+
+            // Send the request and ensure a successful response.
+            var response = await client.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            // Read and parse the response.
+            var responseString = await response.Content.ReadAsStringAsync();
+            JObject jsonResponse = JObject.Parse(responseString);
+
+            // Extract the chatbot reply from the first available response choice.
+            string chatbotReply = jsonResponse["choices"]?[0]?["message"]?["content"]?.ToString();
+
+            return chatbotReply;
+        }
+    }
+}
 public class ChatbotManager : MonoBehaviour
 {
     [SerializeField] TMP_Text userText;
@@ -16,6 +96,11 @@ public class ChatbotManager : MonoBehaviour
 
     // Reference to the CognitiveSpeech component (for text-to-speech)
     [SerializeField] CognitiveSpeech cognitiveSpeech;
+
+    private List<(string Role, string Content)> conversationHistory = new List<(string Role, string Content)>();
+
+    private ChatbotService chatbotService = new ChatbotService();
+    private ExpressionExtractor expressionExtractor = new ExpressionExtractor();
 
 
     public async void StartChat()
@@ -42,79 +127,27 @@ public class ChatbotManager : MonoBehaviour
             }
 
             Debug.Log("User said: " + userInput);
+            conversationHistory.Add(("user", userInput));
 
-            string chatbotReply = await GetChatbotReply(userInput);
-            chatbotText.text = chatbotReply;
+            string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory);
             Debug.Log("Chatbot reply: " + chatbotReply);
 
+            // Extract expressions from the chatbot reply.
+            chatbotText.text = expressionExtractor.RemoveExpressionCommands(chatbotReply);
+            List<string> expressions =  expressionExtractor.ExtractExpressions(chatbotReply);
+
+            // Log the extracted expressions.
+            foreach (var expression in expressions)
+            {
+                Debug.Log("Extracted Expression: " + expression);
+            }
+            conversationHistory.Add(("assistant", chatbotReply));
+
             // Use the CognitiveSpeech component to synthesize and play the reply.
-            await cognitiveSpeech.SynthesizeSpeech(chatbotReply);
+            await cognitiveSpeech.SynthesizeSpeech(chatbotText.text);
 
             // Optionally, add a delay or exit condition here.
             await Task.Delay(500); // slight pause between interactions
         }
-    }
-
-
-    /// <summary>
-    /// Sends the recognized user input as a JSON payload to the DeepSeek chatbot API,
-    /// and returns the chatbot's reply.
-    /// </summary>
-    /// <param name="userInput">User's recognized speech in text form.</param>
-    /// <returns>Chatbot's reply text.</returns>
-    private async Task<string> GetChatbotReply(string userInput)
-    {
-        // 從環境變數中擷取 OpenAI 端點
-        var endpoint = "https://ai-11551720128698ai472434261403.openai.azure.com/";  
-        
-        var key = "FtAI11nvUy2wiLDvePosuHuVg3bUOujpphGHGhVApag4kRUI7Q1IJQQJ99ALACHYHv6XJ3w3AAAAACOGjqAO";
-      
-        AzureKeyCredential credential = new AzureKeyCredential(key); 
-
-        // 將 AzureOpenAIClient 初始化
-        AzureOpenAIClient azureClient = new(new Uri(endpoint), credential); 
-
-        // 使用指定的部署名稱，將 ChatClient 初始化
-        ChatClient chatClient = azureClient.GetChatClient("DeepSeek-R1");  
-        
-        // 建立聊天訊息清單
-        var messages = new List<ChatMessage>
-        {
-            new SystemChatMessage("You are an old man with a stroke currently.  Now, the user is trying to find out whether you have a stroke or not. the user is going to ask some question to you to see if any hints of stroke. you may reply correspondingly to the user's question. before the final output, add the indication word \"MyAns:\""),
-            new UserChatMessage(userInput)
-        };
-
-        
-        // 建立聊天完成選項
-        var options = new ChatCompletionOptions  
-        {  
-            Temperature = (float)0.7,  
-            MaxOutputTokenCount = 800,  
-            
-            FrequencyPenalty = 0,  
-            PresencePenalty = 0,  
-        };  
-    
-        try  
-        {  
-            // 建立聊天完成要求
-            ChatCompletion completion = await chatClient.CompleteChatAsync(messages, options);  
-    
-            // 列印回應
-            if (completion.Content != null && completion.Content.Count > 0)
-            {
-                Debug.Log($"{completion.Content[0].Kind}: {completion.Content[0].Text}");
-                return completion.Content[0].Text;
-            } 
-            else  
-            {  
-                Debug.Log("No response received.");  
-            }  
-        }  
-        catch (Exception ex)  
-        {  
-            Debug.Log($"An error occurred: {ex.Message}");  
-        } 
-        return ""; 
     }
 }
