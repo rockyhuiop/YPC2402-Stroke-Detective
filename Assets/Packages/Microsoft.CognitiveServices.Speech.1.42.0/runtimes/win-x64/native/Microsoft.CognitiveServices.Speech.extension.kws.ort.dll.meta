@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91e9f3c6fbff405ea5d9741f3664108e
+guid: 58b1613b455c4a019e4b7f84e3ddb764
 labels:
 - NuGetForUnity
 PluginImporter:
@@ -22,7 +22,7 @@ PluginImporter:
         Exclude Android: 1
         Exclude Bratwurst: 1
         Exclude CloudRendering: 1
-        Exclude Editor: 1
+        Exclude Editor: 0
         Exclude EmbeddedLinux: 1
         Exclude GameCoreScarlett: 1
         Exclude GameCoreXboxOne: 1
@@ -36,11 +36,18 @@ PluginImporter:
         Exclude VisionOS: 1
         Exclude WebGL: 1
         Exclude Win: 1
-        Exclude Win64: 1
+        Exclude Win64: 0
         Exclude WindowsStoreApps: 1
         Exclude XboxOne: 1
         Exclude iOS: 1
         Exclude tvOS: 1
+  - first:
+      Android: Android
+    second:
+      enabled: 0
+      settings:
+        AndroidSharedLibraryType: Executable
+        CPU: ARMv7
   - first:
       Any: 
     second:
@@ -49,30 +56,35 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
-      enabled: 0
+      enabled: 1
       settings:
+        CPU: x86_64
         DefaultValueInitialized: true
+        OS: Windows
   - first:
       Standalone: Linux64
     second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: AnyCPU
   - first:
       Standalone: OSXUniversal
     second:
       enabled: 0
-      settings: {}
+      settings:
+        CPU: AnyCPU
   - first:
       Standalone: Win
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CPU: AnyCPU
   - first:
       Standalone: Win64
     second:
-      enabled: 0
-      settings: {}
+      enabled: 1
+      settings:
+        CPU: x86_64
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
@@ -82,7 +94,11 @@ PluginImporter:
       iPhone: iOS
     second:
       enabled: 0
-      settings: {}
+      settings:
+        AddToEmbeddedBinaries: false
+        CPU: AnyCPU
+        CompileFlags: 
+        FrameworkDependencies: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
@@ -101,7 +102,6 @@ public class ChatbotManager : MonoBehaviour
     private List<(string Role, string Content)> conversationHistory = new List<(string Role, string Content)>();
 
     private ChatbotService chatbotService = new ChatbotService();
-    private ExpressionExtractor expressionExtractor = new ExpressionExtractor();
 
 
     public async void StartChat()
@@ -134,8 +134,8 @@ public class ChatbotManager : MonoBehaviour
             Debug.Log("Chatbot reply: " + chatbotReply);
 
             // Extract expressions from the chatbot reply.
-            chatbotText.text = expressionExtractor.RemoveExpressionCommands(chatbotReply);
-            List<string> expressions =  expressionExtractor.ExtractExpressions(chatbotReply);
+            chatbotText.text = RemoveExpressionCommands(chatbotReply);
+            List<string> expressions =  ExtractExpressions(chatbotReply);
 
             // Log the extracted expressions.
             foreach (var expression in expressions)
@@ -150,5 +150,42 @@ public class ChatbotManager : MonoBehaviour
             // Optionally, add a delay or exit condition here.
             await Task.Delay(500); // slight pause between interactions
         }
+    }
+
+
+    /// <summary>
+    /// Extracts messages enclosed in asterisks (*) from a given text.
+    /// </summary>
+    /// <param name="text">The input text containing expressions.</param>
+    /// <returns>A list of strings containing the extracted expressions.</returns>
+    public List<string> ExtractExpressions(string text)
+    {
+        // Define a regular expression pattern to find text that is enclosed in asterisks.
+        // The pattern \*(.*?)\* uses a non-greedy match to capture content between asterisks.
+        Regex regex = new Regex(@"\*(.*?)\*");
+        MatchCollection matches = regex.Matches(text);
+
+        List<string> extractedExpressions = new List<string>();
+
+        foreach (Match match in matches)
+        {
+            // match.Groups[1] contains the content between the asterisks.
+            if (match.Groups.Count > 1)
+            {
+                extractedExpressions.Add(match.Groups[1].Value.Trim());
+            }
+        }
+
+        return extractedExpressions;
+    }
+
+    public string RemoveExpressionCommands(string input)
+    {
+        // Use Regex.Replace to remove all occurrences of text enclosed in asterisks.
+        // The pattern \*.*?\* matches any substring starting and ending with an asterisk.
+        string cleanedText = Regex.Replace(input, @"\*.*?\*", string.Empty);
+        
+        // Optionally, you can trim extra white spaces that result from the removal.
+        return cleanedText.Trim();
     }
 }
