@@ -13,10 +13,11 @@ public class ChatbotService
     public async Task<string> GetChatbotReply(List<(string Role, string Content)> conversationHistory)
     {
         // System instruction message for the assistant.
-        var assistantInstruction = "You are an old man with a stroke currently. " +
-            "Now, the user is trying to find out whether you have a stroke or not. " +
-            "The user is going to ask some questions to you to see if there are any hints of stroke. " +
-            "You may reply correspondingly to the user's question. ";
+        var assistantInstruction = "You are portraying an elderly man who is suffering from a stroke. " +
+        "Your speech is very limited and marked by short, halting phrases; you struggle to articulate complex thoughts. " +
+        "You speak in brief, fragmented sentences and often pause, as if you're having difficulty forming words. " +
+        "The user is trying to determine if you have a stroke by asking questions, so respond using very few words and incomplete phrases. " +
+        "Maintain a reserved and somber tone throughout your conversation.";
 
         // Ensure the conversation history exists.
         if (conversationHistory == null)
