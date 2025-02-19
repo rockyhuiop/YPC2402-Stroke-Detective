@@ -9,9 +9,17 @@ public class PoseControl : MonoBehaviour
     [SerializeField] string CurrnetState;
     bool animation_end = false;
     bool animation_start = false;
+
+    // animation IDs
+    private int _animIDSpeed;
+    private int _animIDGrounded;
+    private int _animIDJump;
+    private int _animIDFreeFall;
+    private int _animIDMotionSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        AssignAnimationIDs();
     }
 
     // Update is called once per frame
@@ -20,12 +28,22 @@ public class PoseControl : MonoBehaviour
         //find the animator if it is null (the animator is not apper in the beginning, if set it in start(), it will be missing)
         if ( PoseAnimator == null ) {
             PoseAnimator = GetComponent<Animator>();
+            PoseAnimator.SetFloat(_animIDSpeed, 1);
+            PoseAnimator.SetFloat(_animIDMotionSpeed, 2);
         }
         //if current state not set
         if (CurrnetState!=""&&!PoseAnimator.GetCurrentAnimatorStateInfo(0).IsName(CurrnetState)&&!animation_end&&!animation_start) {
             //set the pose
             StartCoroutine(SetPoseCorr(CurrnetState));
         }
+    }
+    private void AssignAnimationIDs()
+    {
+        _animIDSpeed = Animator.StringToHash("Speed");
+        _animIDGrounded = Animator.StringToHash("Grounded");
+        _animIDJump = Animator.StringToHash("Jump");
+        _animIDFreeFall = Animator.StringToHash("FreeFall");
+        _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
     private AnimationClip FindAnimation(Animator animator, string name)
     {
@@ -59,5 +77,14 @@ public class PoseControl : MonoBehaviour
         animation_end=true;
         //update the collider (collider need to update manually if pose changed)
         GetComponent<SkinnedCollider>().ColliderSet=false;
+    }
+    public void OnFootstep(AnimationEvent animationEvent)
+    {
+        
+    }
+
+    public void OnLand(AnimationEvent animationEvent)
+    {
+        
     }
 }
