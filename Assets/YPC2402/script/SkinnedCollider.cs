@@ -8,6 +8,8 @@ public class SkinnedCollider : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer meshRenderer;
     [SerializeField] MeshCollider collider;
     private Transform self;
+    //if keep update the collider
+    public bool KeepRendering=false;
     //if the mesh collider is set
     public bool ColliderSet=false;
     //set the mesh received from SkinnedMeshRenderer to mesh collider
@@ -39,7 +41,7 @@ public class SkinnedCollider : MonoBehaviour
             }
         } else {
             //set the mesh of mesh collider only once 
-            if (!ColliderSet) {
+            if (!ColliderSet||KeepRendering) {
                 UpdateCollider();
                 ColliderSet=true;
             }

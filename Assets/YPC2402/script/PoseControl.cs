@@ -16,6 +16,12 @@ public class PoseControl : MonoBehaviour
     private int _animIDJump;
     private int _animIDFreeFall;
     private int _animIDMotionSpeed;
+    //animation variable
+    public float animIDSpeed=1.0f;
+    public bool animIDGrounded;
+    public bool animIDJump;
+    public bool animIDFreeFall;
+    public float animIDMotionSpeed=2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +34,14 @@ public class PoseControl : MonoBehaviour
         //find the animator if it is null (the animator is not apper in the beginning, if set it in start(), it will be missing)
         if ( PoseAnimator == null ) {
             PoseAnimator = GetComponent<Animator>();
-            PoseAnimator.SetFloat(_animIDSpeed, 1);
-            PoseAnimator.SetFloat(_animIDMotionSpeed, 2);
         }
         //if current state not set
         if (CurrnetState!=""&&!PoseAnimator.GetCurrentAnimatorStateInfo(0).IsName(CurrnetState)&&!animation_end&&!animation_start) {
             //set the pose
             StartCoroutine(SetPoseCorr(CurrnetState));
         }
+        PoseAnimator.SetFloat(_animIDSpeed, animIDSpeed);
+        PoseAnimator.SetFloat(_animIDMotionSpeed, animIDMotionSpeed);
     }
     private void AssignAnimationIDs()
     {
@@ -45,17 +51,17 @@ public class PoseControl : MonoBehaviour
         _animIDFreeFall = Animator.StringToHash("FreeFall");
         _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
-    private AnimationClip FindAnimation(Animator animator, string name)
+    private float FindAnimationLength(Animator animator, string name)
     {
         foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
         {
             if (clip.name == name)
             {
-                return clip;
+                return clip.length;
             }
         }
 
-        return null;
+        return 0;
     }
     public void SetPose(string state) {
         //set current animation state
@@ -73,7 +79,7 @@ public class PoseControl : MonoBehaviour
         //play the animation
         PoseAnimator.Play(state);
         //wait for the animation end
-        yield return new WaitForSeconds(FindAnimation(PoseAnimator, state).length);
+        yield return new WaitForSeconds(FindAnimationLength(PoseAnimator, state));
         animation_end=true;
         //update the collider (collider need to update manually if pose changed)
         GetComponent<SkinnedCollider>().ColliderSet=false;

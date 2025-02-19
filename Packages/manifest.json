@@ -6,6 +6,7 @@
     "com.meta.xr.simulator": "file:../Assets/com.meta.xr.simulator-68.0.0.tgz",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.addressables": "1.21.21",
+    "com.unity.ai.navigation": "1.1.5",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
     "com.unity.mobile.android-logcat": "1.4.3",
