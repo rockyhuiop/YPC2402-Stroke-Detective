@@ -26,7 +26,7 @@ public class SpeechManager : MonoBehaviour
 
     public void SynthesizeSpeech(string text)
     {
-        _ = cognitiveSpeech.SynthesizeSpeech(text);
+        _ = cognitiveSpeech.SynthesizeSpeech(text, () => {});
     }
 
     public async void RecognizeSpeechAsync(TMP_Text textUI)

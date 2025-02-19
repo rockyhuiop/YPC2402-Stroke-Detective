@@ -31,6 +31,7 @@ public class CognitiveSpeech : MonoBehaviour
     }
 
     public LanguageCode languageCode = LanguageCode.English;
+    
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class CognitiveSpeech : MonoBehaviour
     
 
     // Public method to convert text to speech
-    public async Task SynthesizeSpeech(string text)
+    public async Task SynthesizeSpeech(string text, Action callback)
     {
         if (string.IsNullOrEmpty(text))
         {
@@ -76,7 +77,7 @@ public class CognitiveSpeech : MonoBehaviour
                 Debug.Log("Speech synthesized successfully.");
                 
                 // Play the audio using Unity's AudioSource
-                PlayAudio(result.AudioData);
+                PlayAudio(result.AudioData, callback);
             }
             else if (result.Reason == ResultReason.Canceled)
             {
@@ -131,17 +132,17 @@ public class CognitiveSpeech : MonoBehaviour
 
 
     // Method to play audio from byte array
-    private void PlayAudio(byte[] audioData)
+    private void PlayAudio(byte[] audioData, Action callback)
     {
         // Create an AudioClip from the audio data
         // Azure returns audio in WAV format by default
         // You may need to parse the WAV header
 
         // For simplicity, consider using Unity's built-in audio playback using WWW or UnityWebRequest
-        StartCoroutine(PlayWav(audioData));
+        StartCoroutine(PlayWav(audioData, callback));
     }
 
-    private System.Collections.IEnumerator PlayWav(byte[] wav)
+    private System.Collections.IEnumerator PlayWav(byte[] wav, Action callback)
     {
         string tempFilePath = System.IO.Path.Combine(Application.temporaryCachePath, "tempAudio.wav");
         System.IO.File.WriteAllBytes(tempFilePath, wav);
@@ -152,11 +153,17 @@ public class CognitiveSpeech : MonoBehaviour
             yield return www;
 
             AudioClip clip = www.GetAudioClip(false, false, AudioType.WAV);
+            
             if (clip.loadState == AudioDataLoadState.Loaded)
             {
                 AudioSource audioSource = gameObject.AddComponent<AudioSource>();
                 audioSource.clip = clip;
                 audioSource.Play();
+                // Wait for the audio to finish playing
+                yield return new WaitForSeconds(clip.length);
+                callback.Invoke();
+                Destroy(audioSource);
+                
             }
             else
             {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 // ChatbotService handles sending the multi-round conversation HTTP request.
 public class ChatbotService
@@ -99,14 +100,38 @@ public class ChatbotManager : MonoBehaviour
     // Reference to the CognitiveSpeech component (for text-to-speech)
     [SerializeField] CognitiveSpeech cognitiveSpeech;
 
+    [SerializeField] Button isStrokeBtn;
+    [SerializeField] Button isNotStrokeBtn;
+
     private List<(string Role, string Content)> conversationHistory = new List<(string Role, string Content)>();
 
     private ChatbotService chatbotService = new ChatbotService();
 
+    private bool isTalking = false;
+    private bool isEndofChat = false;
+
+    public int ChatToken = 5;
+
+    [SerializeField] GameObject rootGameObject;
+
+    private void Start()
+    {
+        isStrokeBtn.onClick.AddListener(() => {
+            GameManager.instance.DetermineStroke(true, rootGameObject);
+        });
+
+        isNotStrokeBtn.onClick.AddListener(() => {
+            GameManager.instance.DetermineStroke(false, rootGameObject);
+        });
+
+    }
 
     public async void StartChat()
     {
         await ChatLoop();
+        if(isEndofChat){
+            Debug.Log("End of Chat");
+        }
     }
 
     /// <summary>
@@ -117,6 +142,12 @@ public class ChatbotManager : MonoBehaviour
     {
         while (true)
         {
+            if (isTalking)
+            {
+                await Task.Delay(100);
+                continue;
+            }
+
             //chatbotText.text = "Please say something to chat with the bot...";
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
             userText.text = userInput;
@@ -143,13 +174,24 @@ public class ChatbotManager : MonoBehaviour
                 Debug.Log("Extracted Expression: " + expression);
             }
             conversationHistory.Add(("assistant", chatbotReply));
+            isTalking = true;
+            ChatToken--;
+            if(ChatToken <= 0){
+                isEndofChat = true;
+                break;
+            }
 
             // Use the CognitiveSpeech component to synthesize and play the reply.
-            await cognitiveSpeech.SynthesizeSpeech(chatbotText.text);
+            await cognitiveSpeech.SynthesizeSpeech(chatbotText.text, OnAudioPlaybackFinished);
 
             // Optionally, add a delay or exit condition here.
             await Task.Delay(500); // slight pause between interactions
         }
+    }
+
+    private void OnAudioPlaybackFinished()
+    {
+        isTalking = false;
     }
 
 
