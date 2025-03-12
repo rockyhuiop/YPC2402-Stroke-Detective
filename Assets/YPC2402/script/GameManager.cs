@@ -40,10 +40,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void DetermineStroke(bool answer, GameObject NPC){
+    public void DetermineStroke(bool answer, GameObject NPC, GameObject correctSign, GameObject wrongSign) {
         if (NPCDataDict[NPC].isStroke == answer) {
+            correctSign.SetActive(true);
             AddDone(true);
         } else {
+            wrongSign.SetActive(true);
             AddDone(false);
         }
     }

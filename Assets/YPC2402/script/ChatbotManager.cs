@@ -112,16 +112,19 @@ public class ChatbotManager : MonoBehaviour
 
     public int ChatToken = 5;
 
-    [SerializeField] GameObject rootGameObject;
+    [SerializeField] GameObject rootGameObject, correctSign, wrongSign;
+    
 
     private void Start()
     {
         isStrokeBtn.onClick.AddListener(() => {
-            GameManager.instance.DetermineStroke(true, rootGameObject);
+            isNotStrokeBtn.interactable = false;
+            GameManager.instance.DetermineStroke(true, rootGameObject, correctSign, wrongSign);
         });
 
         isNotStrokeBtn.onClick.AddListener(() => {
-            GameManager.instance.DetermineStroke(false, rootGameObject);
+            isStrokeBtn.interactable = false;
+            GameManager.instance.DetermineStroke(false, rootGameObject, correctSign, wrongSign);
         });
 
     }
