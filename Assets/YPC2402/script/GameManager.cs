@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
         Finish.SetActive(false);
         UpdateScoreboard();
         InitializeDictionary();
+        foreach (var NPC in NPCs) {
+            NPCaccessing npcacc=NPC.GetComponent<NPCaccessing>();
+            npcacc.ChangeClotheRandOld();
+        }
     }
 
     private void InitializeDictionary(){
