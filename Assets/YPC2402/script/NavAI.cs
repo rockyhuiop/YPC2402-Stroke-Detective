@@ -14,6 +14,7 @@ public class NavAI : MonoBehaviour
     private float time_to_resume=0; 
     private bool setTimer=false;
     public float speed=0;
+    public bool force_stop=false;
 
 
     // Start is called before the first frame update
@@ -30,6 +31,12 @@ public class NavAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (force_stop) {
+            SwitchAnimationState(AIState.Idle);
+            agent.enabled = false;
+        } else {
+            agent.enabled = true;
+        }
         speed=agent.velocity.sqrMagnitude;
         Pose.animIDMotionSpeed=agent.velocity.sqrMagnitude*20.0f;
         if (currentState == AIState.Idle)

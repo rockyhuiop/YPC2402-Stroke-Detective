@@ -4755,7 +4755,7 @@ GameObject:
   - component: {fileID: 5719880625566535245}
   m_Layer: 8
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8040,6 +8040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandSaveKey: 108
   RightHandSaveKey: 114
+  LeftSaveKey: 26
+  RightSaveKey: 32
   LeftHand: {fileID: 0}
   RightHand: {fileID: 0}
   LeftPhysics: {fileID: 3253316120517462590}
