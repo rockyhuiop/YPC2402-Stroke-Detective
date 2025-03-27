@@ -20,7 +20,7 @@ public class NavAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<Transform>().parent.parent.GetComponent<NavMeshAgent>();
         agent.stoppingDistance = 0.01f;
         agent.autoBraking = true;
 

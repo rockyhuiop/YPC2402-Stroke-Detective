@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
         Scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").transform.GetChild(0).GetComponent<TMP_Text>();
         Finish = GameObject.FindGameObjectWithTag("Finish");
+        NPCs = GameObject.FindGameObjectsWithTag("NPC");
         Finish.SetActive(false);
         UpdateScoreboard();
         InitializeDictionary();
