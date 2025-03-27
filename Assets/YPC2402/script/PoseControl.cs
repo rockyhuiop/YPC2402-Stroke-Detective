@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PoseControl : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class PoseControl : MonoBehaviour
         }
         PoseAnimator.SetFloat(_animIDSpeed, animIDSpeed);
         PoseAnimator.SetFloat(_animIDMotionSpeed, animIDMotionSpeed);
+        if (CurrnetState == "liedown") {
+            GetComponent<NavAI>().enabled = false;
+            GetComponent<Transform>().parent.parent.GetComponent<NavMeshAgent>().enabled = false;
+        }
     }
     private void AssignAnimationIDs()
     {

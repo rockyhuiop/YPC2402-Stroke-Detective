@@ -1,6 +1,8 @@
+using HurricaneVR.Framework.Core.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSensor : MonoBehaviour
@@ -33,14 +35,16 @@ public class PlayerSensor : MonoBehaviour
     private void Update() {
         bool havePlayer=false;
         Transform player=null;
-        Transform NPC=null;
+        Transform NPC=GetComponent<Transform>().parent;
         foreach (var collider in colliderList) {
             if (collider.transform.CompareTag("Player")) {
                 player = collider.transform;
-                NPC = GetComponent<Transform>().parent;
                 havePlayer=true;
                 break;
             }          
+        }
+        if (NPC.GetComponent<PoseControl>().GetPose()!="stand"){
+            return;
         }
         //stop NPC nav ai moving
         navAI.force_stop=havePlayer;
