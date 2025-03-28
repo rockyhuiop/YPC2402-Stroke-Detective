@@ -34,9 +34,9 @@ public class PoseControl : MonoBehaviour
     {
         Transform y_adjustment = GetComponent<Transform>().parent;
         if (CurrnetState == "stand" || CurrnetState == "Idle Walk Run Blend") {
-            y_adjustment.localPosition=new Vector3(0,-0.159f,0);
+            y_adjustment.localPosition=new Vector3(0,0.159f,0);
         } else if (CurrnetState == "liedown") {
-            y_adjustment.localPosition=new Vector3(0,-0.005f,0);
+            y_adjustment.localPosition=new Vector3(0,0.005f,0);
         } else if (CurrnetState == "sit") {
             y_adjustment.localPosition=new Vector3(0,0,0);
         }
