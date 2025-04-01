@@ -41,6 +41,9 @@ namespace HurricaneVR.Framework.Core.UI
             {
                 pointer.PointerEventData = new PointerEventData(eventSystem);
             }
+            foreach (var canva in GameObject.FindGameObjectsWithTag("HVRcanva")) {
+                AddCanvas(canva.GetComponent<Canvas>());
+            }
         }
 
         public void AddPointer(HVRUIPointer pointer)

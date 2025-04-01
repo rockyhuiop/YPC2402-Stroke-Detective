@@ -10,6 +10,7 @@ TagManager:
   - Clickable
   - NPC
   - Scoreboard
+  - HVRcanva
   layers:
   - Default
   - TransparentFX
