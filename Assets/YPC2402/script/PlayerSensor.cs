@@ -44,7 +44,7 @@ public class PlayerSensor : MonoBehaviour
                 break;
             }          
         }
-        if (NPC.GetComponent<PoseControl>().GetPose()!="stand"){
+        if (NPC.GetComponent<PoseControl>().GetPose()!="stand"&&NPC.GetComponent<PoseControl>().GetPose()!="Idle Walk Run Blend"){
             return;
         }
         //stop NPC nav ai moving
