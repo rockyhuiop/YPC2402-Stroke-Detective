@@ -38,9 +38,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void InitializeDictionary(){
-        for (int i = 0; i < NPCData.Length; i++)
+        for (int i = 0; i < NPCs.Length; i++)
         {
-            NPCDataDict.Add(NPCs[i], NPCData[i]);
+            NPCDataDict.Add(NPCs[i], NPCData[Random.Range(0,NPCData.Length-1)]);
         }
     }
 
