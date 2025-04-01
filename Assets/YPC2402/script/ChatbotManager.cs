@@ -129,7 +129,7 @@ public class ChatbotManager : MonoBehaviour
             GameManager.instance.DetermineStroke(false, rootGameObject, correctSign, wrongSign);
             end=true;
         });
-
+        cognitiveSpeech=GameObject.FindObjectOfType<CognitiveSpeech>();
     }
 
     public async void StartChat()
