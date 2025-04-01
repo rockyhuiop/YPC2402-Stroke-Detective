@@ -9,6 +9,7 @@ public class PlayerSensor : MonoBehaviour
 {
     private NavAI navAI;
     public List<GameObject> colliderList = new List<GameObject>();
+    public bool havePlayer=false;
     private void Start() {
         navAI = GetComponent<Transform>().parent.GetComponent<NavAI>();
     }
@@ -33,7 +34,7 @@ public class PlayerSensor : MonoBehaviour
         return colliderList;
     }
     private void Update() {
-        bool havePlayer=false;
+        havePlayer=false;
         Transform player=null;
         Transform NPC=GetComponent<Transform>().parent;
         foreach (var collider in colliderList) {

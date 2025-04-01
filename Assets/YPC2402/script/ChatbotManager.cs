@@ -109,6 +109,7 @@ public class ChatbotManager : MonoBehaviour
 
     private bool isTalking = false;
     private bool isEndofChat = false;
+    public bool end = false;
 
     public int ChatToken = 5;
 
@@ -120,11 +121,13 @@ public class ChatbotManager : MonoBehaviour
         isStrokeBtn.onClick.AddListener(() => {
             isNotStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(true, rootGameObject, correctSign, wrongSign);
+            end=true;
         });
 
         isNotStrokeBtn.onClick.AddListener(() => {
             isStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(false, rootGameObject, correctSign, wrongSign);
+            end=true;
         });
 
     }
@@ -143,7 +146,7 @@ public class ChatbotManager : MonoBehaviour
     /// </summary>
     private async Task ChatLoop()
     {
-        while (true)
+        while (!end)
         {
             if (isTalking)
             {
