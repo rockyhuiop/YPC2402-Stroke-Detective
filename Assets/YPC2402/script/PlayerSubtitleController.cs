@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSubtitleController : MonoBehaviour
 {
+    public static PlayerSubtitleController instance;
     public GameObject subtitle; // Assign the subtitle GameObject in the Inspector (child of the player)
     private List<GameObject> npcs;
     private TMP_Text subtitleTextMesh; // Assuming TextMesh; adjust if using UI Text or TextMeshPro
@@ -11,6 +12,14 @@ public class PlayerSubtitleController : MonoBehaviour
 
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
         // Find all NPCs in the scene by tag
         npcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("NPC"));
         

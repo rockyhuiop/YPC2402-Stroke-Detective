@@ -94,7 +94,7 @@ public class ChatbotService
 }
 public class ChatbotManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text userText;
+    TMP_Text userText;
     [SerializeField] TMP_Text chatbotText;
 
     // Reference to the CognitiveSpeech component (for text-to-speech)
@@ -118,6 +118,7 @@ public class ChatbotManager : MonoBehaviour
 
     private void Start()
     {
+        userText = PlayerSubtitleController.instance.subtitle.GetComponentInChildren<TMP_Text>();
         isStrokeBtn.onClick.AddListener(() => {
             isNotStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(true, rootGameObject, correctSign, wrongSign);
