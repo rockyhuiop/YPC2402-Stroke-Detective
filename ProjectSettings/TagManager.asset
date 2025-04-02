@@ -11,6 +11,7 @@ TagManager:
   - NPC
   - Scoreboard
   - HVRcanva
+  - Subtitle
   layers:
   - Default
   - TransparentFX
