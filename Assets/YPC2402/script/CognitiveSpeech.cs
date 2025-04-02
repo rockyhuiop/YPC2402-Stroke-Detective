@@ -56,7 +56,6 @@ public class CognitiveSpeech : MonoBehaviour
         }
         speechConfig.SpeechSynthesisVoiceName = voiceName;
     }
-    
 
     // Public method to convert text to speech
     public async Task SynthesizeSpeech(string text, Action callback)
