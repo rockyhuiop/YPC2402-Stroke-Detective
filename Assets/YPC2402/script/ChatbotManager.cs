@@ -157,7 +157,8 @@ public class ChatbotManager : MonoBehaviour
 
             //chatbotText.text = "Please say something to chat with the bot...";
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
-            userText.text = userInput;
+            userText.SetText(userInput);
+            //userText.text = userInput;
 
             if (string.IsNullOrEmpty(userInput))
             {
