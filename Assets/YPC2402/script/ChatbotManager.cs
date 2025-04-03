@@ -120,6 +120,7 @@ public class ChatbotManager : MonoBehaviour
 
     private void Start()
     {
+        rootGameObject=GetComponent<Transform>().parent.gameObject;
         userText = PlayerSubtitleController.instance.subtitle.GetComponentInChildren<TMP_Text>();
         isStrokeBtn.onClick.AddListener(() => {
             isNotStrokeBtn.interactable = false;
