@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/YPC2402/scene/apartment.unity
     guid: 85af2bad0e2d3b84ab9a66cfa535c0bc
+  - enabled: 1
+    path: Assets/YPC2402/scene/Playground.unity
+    guid: 2ef8e581b555ba749883b5c72610d860
+  - enabled: 1
+    path: Assets/YPC2402/scene/Home.unity
+    guid: 6d2972ca7bb58b246812f3df93f9a494
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c731ad03961b7d54fb2401b920484699, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: aa5a7c83320bcbd4cb3018f030760543, type: 2}
