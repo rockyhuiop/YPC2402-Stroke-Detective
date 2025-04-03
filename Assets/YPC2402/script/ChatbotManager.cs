@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 // ChatbotService handles sending the multi-round conversation HTTP request.
 public class ChatbotService
@@ -112,6 +113,7 @@ public class ChatbotManager : MonoBehaviour
     public bool end = false;
 
     public int ChatToken = 5;
+    private IEnumerator LoadingC;
 
     [SerializeField] GameObject rootGameObject, correctSign, wrongSign;
     
@@ -164,14 +166,15 @@ public class ChatbotManager : MonoBehaviour
             {
                 Debug.Log("No valid speech detected. Please try again.");
                 continue;
-            }
+            } 
 
             Debug.Log("User said: " + userInput);
             conversationHistory.Add(("user", userInput));
-
+            LoadingC=LoadingCoroutine();
+            StartCoroutine(LoadingC);
             string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory);
+            StopCoroutine(LoadingC);
             Debug.Log("Chatbot reply: " + chatbotReply);
-
             // Extract expressions from the chatbot reply.
             chatbotText.text = RemoveExpressionCommands(chatbotReply);
             List<string> expressions =  ExtractExpressions(chatbotReply);
@@ -195,6 +198,23 @@ public class ChatbotManager : MonoBehaviour
             // Optionally, add a delay or exit condition here.
             await Task.Delay(500); // slight pause between interactions
         }
+    }
+
+    IEnumerator LoadingCoroutine()
+    {
+        string loading=".";
+        while (true) {
+            chatbotText.SetText(loading);
+            yield return new WaitForSeconds(1);
+            if (loading != "...") {
+                loading+=".";
+            } else {
+                loading=".";
+            }
+            
+        }
+        
+
     }
 
     private void OnAudioPlaybackFinished()
