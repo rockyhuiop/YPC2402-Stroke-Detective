@@ -15,6 +15,7 @@ public class NavAI : MonoBehaviour
     private bool setTimer=false;
     public float speed=0;
     public bool force_stop=false;
+    [SerializeField] string scene;
 
 
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class NavAI : MonoBehaviour
     {
         agent = GetComponent<Transform>().parent.parent.GetComponent<NavMeshAgent>();
         agent.stoppingDistance = 0.01f;
-        agent.autoBraking = true;
+        agent.autoBraking = !(scene=="City");
 
         currentState = AIState.Idle;
         Pose=GetComponent<PoseControl>();
@@ -49,12 +50,18 @@ public class NavAI : MonoBehaviour
                 if (!setTimer) {
                     time_to_resume=Time.time+5.0f;    
                     setTimer = true;
-                }      
-                if (Time.time < time_to_resume) {
-                    return;
                 }
-                setTimer=false;
-                agent.destination = RandomNavSphere(transform.position, Random.Range(2.0f, 3.0f));
+                if (scene != "City") {
+                    if (Time.time < time_to_resume) {
+                        return;
+                    }
+                }
+                setTimer =false;
+                if (scene == "City") {
+                    agent.destination = RandomNavSphere(transform.position, Random.Range(15f, 15f));
+                } else {
+                    agent.destination = RandomNavSphere(transform.position, Random.Range(2.0f, 3.0f));
+                }
                 currentState = AIState.Walking;
                 SwitchAnimationState(currentState);
                         
