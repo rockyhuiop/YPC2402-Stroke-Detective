@@ -171,8 +171,8 @@ public class GameManager : MonoBehaviour
             "You have finished the game!\n" +
             "The correct rate is "+ Correct_NPC*100.0/NPCs.Length + "%\n"+
             "The average correct rate is "+ avg_acc + "\n"+
-            "The time used is "+ time_used + "\n"+
-            "The average time used is "+ avg_time
+            "The time used is "+ time_used + " s\n"+
+            "The average time used is "+ avg_time + " s"
         );
     }
 }
