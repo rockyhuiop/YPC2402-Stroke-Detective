@@ -18,11 +18,14 @@ public class GameManager : MonoBehaviour
     public int Wrong_NPC=0;
     public TMP_Text Scoreboard;
     public GameObject Finish;
+    private float time_used;
     private float avg_acc;
+    private float avg_time;
+    [SerializeField] string level;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(UploadResult(0));
+        time_used=Time.time;
         if(instance == null){
             instance = this;
         }else{
@@ -84,14 +87,17 @@ public class GameManager : MonoBehaviour
             "Wrong: " + (Wrong_NPC).ToString() + "\n" );
     }
     void SetFinish() {
-        Finish.SetActive(true);
-        Finish.transform.GetChild(0).GetComponent<TMP_Text>().SetText(
-            "Congratulations!\n" +
-            "You have finished the game!\n" +
-            "The correct rate is "+ Correct_NPC*100.0/NPCs.Length + "%\n"+
-            "The average correct rate is "+ avg_acc
-        );
-        StartCoroutine(UploadResult(Correct_NPC*100.0/NPCs.Length));
+        //time_used=Time.time-time_used;
+        StartCoroutine(FinishCoroutine());
+        //Finish.SetActive(true);
+        //Finish.transform.GetChild(0).GetComponent<TMP_Text>().SetText(
+        //    "Congratulations!\n" +
+        //    "You have finished the game!\n" +
+        //    "The correct rate is "+ Correct_NPC*100.0/NPCs.Length + "%\n"+
+        //    "The average correct rate is "+ avg_acc + "\n"+
+        //    "The time used is "+ time_used + "\n"+
+        //    "The average time used is "+ avg_time
+        //);
     }
     // Update is called once per frame
     void Update()
@@ -100,11 +106,19 @@ public class GameManager : MonoBehaviour
     }
 
 
-    IEnumerator UploadResult(double acc)
+    IEnumerator FinishCoroutine()
     {
+        time_used=Time.time-time_used;
+        String api_uri="http://localhost:5000/api/levels/";
+        String uri=api_uri+"add_result";
         using (UnityWebRequest www = UnityWebRequest.Post(
-            "http://localhost:5000/api/level1/add_result", 
-            $"{{ \"NPC\": [1, 0, 1], \"acc\": {acc.ToString()}, \"time\": 56.5 }}",
+            uri, 
+            $"{{ " +
+            $"\"level\": {level}, " +
+            $"\"NPC\": [1, 0, 1], " +
+            $"\"acc\": {Correct_NPC*100.0/NPCs.Length}, " +
+            $"\"time\": {time_used} " +
+            $"}}",
             "application/json"
             ))
         {
@@ -116,10 +130,10 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Form upload complete!");
+                Debug.Log("Result upload complete!");
             }
         }
-        String uri="http://localhost:5000/api/level1/get_avg";
+        uri=api_uri+"get_avg/"+level;
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
             // Request and wait for the desired page.
@@ -141,11 +155,24 @@ public class GameManager : MonoBehaviour
                     String result=webRequest.downloadHandler.text;
                     result=result.Replace("{", "");
                     result=result.Replace("}", "");
-                    result=result.Split(":")[1].Trim();
-                    avg_acc = float.Parse(result);
+                    result=result.Replace("\"", "");
+                    Debug.Log(result);
+                    Debug.Log(result.Split(",")[0].Split(":")[1].Trim());
+                    Debug.Log(result.Split(",")[1].Split(":")[1].Trim());
+                    avg_acc=float.Parse(result.Split(",")[0].Split(":")[1].Trim());
+                    avg_time=float.Parse(result.Split(",")[1].Split(":")[1].Trim());
                     Debug.Log(pages[page] + ":\nReceived: " + result);
                     break;
             }
         }
+        Finish.SetActive(true);
+        Finish.transform.GetChild(0).GetComponent<TMP_Text>().SetText(
+            "Congratulations!\n" +
+            "You have finished the game!\n" +
+            "The correct rate is "+ Correct_NPC*100.0/NPCs.Length + "%\n"+
+            "The average correct rate is "+ avg_acc + "\n"+
+            "The time used is "+ time_used + "\n"+
+            "The average time used is "+ avg_time
+        );
     }
 }
