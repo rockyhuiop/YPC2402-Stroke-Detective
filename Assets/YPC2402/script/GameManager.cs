@@ -1,3 +1,4 @@
+using HurricaneVR.Framework.Core.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -166,13 +167,19 @@ public class GameManager : MonoBehaviour
             }
         }
         Finish.SetActive(true);
-        Finish.transform.GetChild(0).GetComponent<TMP_Text>().SetText(
-            "Congratulations!\n" +
-            "You have finished the game!\n" +
-            "The correct rate is "+ Correct_NPC*100.0/NPCs.Length + "%\n"+
-            "The average correct rate is "+ avg_acc + "\n"+
-            "The time used is "+ time_used + " s\n"+
-            "The average time used is "+ avg_time + " s"
-        );
+        var accuracy_row=Finish.transform.FindChildRecursive("accuracy");
+        var time_row=Finish.transform.FindChildRecursive("time");
+        accuracy_row.Find("you").GetComponent<TMP_Text>().SetText((Correct_NPC*100.0/NPCs.Length).ToString("F2")+"%");
+        accuracy_row.Find("avg").GetComponent<TMP_Text>().SetText(avg_acc.ToString("F2")+"%");
+        time_row.Find("you").GetComponent<TMP_Text>().SetText(time_used.ToString("F2")+"S");
+        time_row.Find("avg").GetComponent<TMP_Text>().SetText(avg_time.ToString("F2")+"S");
+        /*
+        Congratulations!
+        You have finished the game!
+        The correct rate is 100%
+        The average correct rate is 100
+        The time used is 8.298458 s
+        The average time used is 8.298458 s 
+        */
     }
 }
