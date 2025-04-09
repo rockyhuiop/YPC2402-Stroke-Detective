@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e002e5abc2418c47879fb5d7a4f5722, type: 3}
   m_Name: npc3
   m_EditorClassIdentifier: 
-  isStroke: 1
+  isStroke: 0
   symptoms: 
   NPCName: 
   NPCDescription: 

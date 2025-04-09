@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         Scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").transform.GetChild(0).GetComponent<TMP_Text>();
         Finish = GameObject.FindGameObjectWithTag("Finish");
-        NPCs = GameObject.FindGameObjectsWithTag("NPC");
+        //NPCs = GameObject.FindGameObjectsWithTag("NPC");
         Finish.SetActive(false);
         UpdateScoreboard();
         InitializeDictionary();
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     private void InitializeDictionary(){
         for (int i = 0; i < NPCs.Length; i++)
         {
-            NPCDataDict.Add(NPCs[i], NPCData[UnityEngine.Random.Range(0,NPCData.Length-1)]);
+            NPCDataDict.Add(NPCs[i], NPCData[i]);
         }
     }
 
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     IEnumerator FinishCoroutine()
     {
         time_used=Time.time-time_used;
-        String api_uri="http://localhost:5000/api/levels/";
+        String api_uri="http://y24asx4.ddns.net:5000/api/levels/";
         String uri=api_uri+"add_result";
         using (UnityWebRequest www = UnityWebRequest.Post(
             uri, 
