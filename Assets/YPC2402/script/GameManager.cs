@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     private void InitializeDictionary(){
         for (int i = 0; i < NPCs.Length; i++)
         {
-            NPCDataDict.Add(NPCs[i], NPCData[i]);
+            NPCDataDict.Add(NPCs[i], NPCs[i].GetComponent<NPC>().NPCData);
         }
     }
 
