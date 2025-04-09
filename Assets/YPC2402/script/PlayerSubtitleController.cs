@@ -7,7 +7,7 @@ public class PlayerSubtitleController : MonoBehaviour
     public static PlayerSubtitleController instance;
     public GameObject subtitle; // Assign the subtitle GameObject in the Inspector (child of the player)
     private List<GameObject> npcs;
-    private TMP_Text subtitleTextMesh; // Assuming TextMesh; adjust if using UI Text or TextMeshPro
+    public TMP_Text subtitleTextMesh; // Assuming TextMesh; adjust if using UI Text or TextMeshPro
     private float distanceThreshold = 2.5f;
 
     void Start()
