@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class NavAI : MonoBehaviour
     private bool setTimer=false;
     public float speed=0;
     public bool force_stop=false;
-    [SerializeField] string scene;
+    private string scene;
 
 
     // Start is called before the first frame update
@@ -24,7 +25,8 @@ public class NavAI : MonoBehaviour
     {
         agent = GetComponent<Transform>().parent.parent.GetComponent<NavMeshAgent>();
         agent.stoppingDistance = 0.01f;
-        agent.autoBraking = !(SceneManager.GetActiveScene().name=="City");
+        scene=SceneManager.GetActiveScene().name;
+        agent.autoBraking = !(scene=="City");
 
         currentState = AIState.Idle;
         Pose=GetComponent<PoseControl>();
