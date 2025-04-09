@@ -8,12 +8,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using System.Xml.Linq;
 
 // ChatbotService handles sending the multi-round conversation HTTP request.
 public class ChatbotService
 {
     // This function sends the conversation history to the API and returns the chatbot's reply.
-    public async Task<string> GetChatbotReply(List<(string Role, string Content)> conversationHistory)
+    public async Task<string> GetChatbotReply(List<(string Role, string Content)> conversationHistory, string description)
     {
         // System instruction message for the assistant.
         var assistantInstruction = "You are portraying an elderly man who is suffering from a stroke. " +
@@ -31,7 +32,8 @@ public class ChatbotService
         // Add the system message at the beginning if it hasn't been added yet.
         if (conversationHistory.Count == 0 || conversationHistory[0].Role != "system")
         {
-            conversationHistory.Insert(0, ("system", assistantInstruction));
+            conversationHistory.Insert(0, ("system", description));
+            //conversationHistory.Insert(0, ("system", assistantInstruction));
         }
 
         // Build the messages array for the JSON payload.
@@ -99,8 +101,8 @@ public class ChatbotManager : MonoBehaviour
     [SerializeField] TMP_Text chatbotText;
 
     // Reference to the CognitiveSpeech component (for text-to-speech)
+    [SerializeField] StrokeDetectiveNPCData NPCData;
     [SerializeField] CognitiveSpeech cognitiveSpeech;
-
     [SerializeField] Button isStrokeBtn;
     [SerializeField] Button isNotStrokeBtn;
 
@@ -116,10 +118,10 @@ public class ChatbotManager : MonoBehaviour
     private IEnumerator LoadingC;
 
     [SerializeField] GameObject rootGameObject, correctSign, wrongSign;
-    
 
     private void Start()
     {
+        NPCData=GetComponent<Transform>().parent.GetComponent<NPC>().NPCData;
         rootGameObject=GetComponent<Transform>().parent.gameObject;
         //userText = PlayerSubtitleController.instance.subtitle.GetComponentInChildren<TMP_Text>();
         isStrokeBtn.onClick.AddListener(() => {
@@ -157,7 +159,7 @@ public class ChatbotManager : MonoBehaviour
                 await Task.Delay(100);
                 continue;
             }
-
+            Debug.Log("NPC des: "+NPCData.NPCDescription);
             //chatbotText.text = "Please say something to chat with the bot...";
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
             userText.SetText(userInput);
@@ -173,7 +175,7 @@ public class ChatbotManager : MonoBehaviour
             conversationHistory.Add(("user", userInput));
             LoadingC=LoadingCoroutine();
             StartCoroutine(LoadingC);
-            string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory);
+            string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory,NPCData.NPCDescription);
             StopCoroutine(LoadingC);
             Debug.Log("Chatbot reply: " + chatbotReply);
             // Extract expressions from the chatbot reply.
