@@ -159,7 +159,6 @@ public class ChatbotManager : MonoBehaviour
                 await Task.Delay(100);
                 continue;
             }
-            Debug.Log("NPC des: "+NPCData.NPCDescription);
             //chatbotText.text = "Please say something to chat with the bot...";
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
             userText.SetText(userInput);
