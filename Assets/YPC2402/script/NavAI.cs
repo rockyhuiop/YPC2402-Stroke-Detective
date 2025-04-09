@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class NavAI : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class NavAI : MonoBehaviour
     {
         agent = GetComponent<Transform>().parent.parent.GetComponent<NavMeshAgent>();
         agent.stoppingDistance = 0.01f;
-        agent.autoBraking = !(scene=="City");
+        agent.autoBraking = !(SceneManager.GetActiveScene().name=="City");
 
         currentState = AIState.Idle;
         Pose=GetComponent<PoseControl>();

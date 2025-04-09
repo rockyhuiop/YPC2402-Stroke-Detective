@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: npc1
   m_EditorClassIdentifier: 
   isStroke: 1
-  symptoms: 
+  symptoms: cannot speak
   NPCName: 
   NPCDescription: You are portraying an elderly man who is suffering from a stroke.
     Your speech is very limited and marked by short, halting phrases; you struggle

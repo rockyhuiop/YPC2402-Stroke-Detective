@@ -118,12 +118,11 @@ public class ChatbotManager : MonoBehaviour
     private IEnumerator LoadingC;
 
     [SerializeField] GameObject rootGameObject, correctSign, wrongSign;
-
     private void Start()
     {
         NPCData=GetComponent<Transform>().parent.GetComponent<NPC>().NPCData;
         rootGameObject=GetComponent<Transform>().parent.gameObject;
-        //userText = PlayerSubtitleController.instance.subtitle.GetComponentInChildren<TMP_Text>();
+        userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
         isStrokeBtn.onClick.AddListener(() => {
             isNotStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(true, rootGameObject, correctSign, wrongSign);
@@ -140,7 +139,11 @@ public class ChatbotManager : MonoBehaviour
 
     public async void StartChat()
     {
-        await ChatLoop();
+        if (NPCData.symptoms!="cannot speak")
+        {
+            await ChatLoop();
+        }
+        
         if(isEndofChat){
             Debug.Log("End of Chat");
         }
