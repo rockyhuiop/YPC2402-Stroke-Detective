@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
             uri, 
             $"{{ " +
             $"\"level\": {level}, " +
-            $"\"NPC\": [1, 0, 1], " +
             $"\"acc\": {Correct_NPC*100.0/NPCs.Length}, " +
             $"\"time\": {time_used} " +
             $"}}",
