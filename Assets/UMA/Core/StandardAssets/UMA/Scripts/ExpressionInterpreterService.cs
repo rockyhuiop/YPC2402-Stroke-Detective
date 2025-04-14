@@ -1,16 +1,24 @@
-using System;
+using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using UnityEngine;
 
 public class ExpressionInterpreterService
 {
     public async Task<Dictionary<string, object>> GetExpressionCommands(string reply)
     {
-        // Updated system instruction for the second chatbot
-        var systemInstruction = "You are an assistant that analyzes a chatbot's reply to determine the facial and body expressions of a game character. The reply may contain expressions enclosed in asterisks (*), such as *shaking head slightly*. Your task is to identify these expressions and convert them into specific animation commands for the character's animation system. The animation system has the following parameters: neckUp_Down, neckLeft_Right, neckTiltLeft_Right, headUp_Down, headLeft_Right, headTiltLeft_Right, jawOpen_Close, jawForward_Back, jawLeft_Right, mouthLeft_Right, mouthUp_Down, mouthNarrow_Pucker, tongueOut, tongueCurl (0 to 1), tongueUp_Down, tongueLeft_Right, tongueWide_Narrow, leftMouthSmile_Frown, rightMouthSmile_Frown, leftLowerLipUp_Down, rightLowerLipUp_Down, leftUpperLipUp_Down, rightUpperLipUp_Down, leftCheekPuff_Squint, rightCheekPuff_Squint, noseSneer (0 to 1), leftEyeOpen_Close, rightEyeOpen_Close, leftEyeUp_Down, rightEyeUp_Down, leftEyeIn_Out, rightEyeIn_Out, browsIn (0 to 1), leftBrowUp_Down, rightBrowUp_Down, midBrowUp_Down, leftGrasp (0 to 1), rightGrasp (0 to 1), leftPeace (0 to 1), rightPeace (0 to 1), leftRude (0 to 1), rightRude (0 to 1), leftPoint (0 to 1), rightPoint (0 to 1). Each parameter ranges from -1 to 1 unless specified otherwise. For the identified expressions in the reply, provide a JSON object where the keys are the parameter names and the values are either a float for static values or an object with 'type': 'oscillate', 'min': float, 'max': float, 'frequency': float for oscillating values. If there are multiple expressions, combine the commands appropriately. If there are no expressions, return an empty JSON object.";
+        var systemInstruction = @"You are an assistant that analyzes a chatbot's reply to determine the facial and body expressions of a game character. The reply may contain expressions enclosed in asterisks (*), such as *shaking head slightly* or *lifts arm confidently*. Your task is to identify these expressions and convert them into specific animation commands for the character's animation system.
+
+The animation system has the following parameters: neckUp_Down, neckLeft_Right, neckTiltLeft_Right, headUp_Down, headLeft_Right, headTiltLeft_Right, jawOpen_Close, jawForward_Back, jawLeft_Right, mouthLeft_Right, mouthUp_Down, mouthNarrow_Pucker, tongueOut, tongueCurl (0 to 1), tongueUp_Down, tongueLeft_Right, tongueWide_Narrow, leftMouthSmile_Frown, rightMouthSmile_Frown, leftLowerLipUp_Down, rightLowerLipUp_Down, leftUpperLipUp_Down, rightUpperLipUp_Down, leftCheekPuff_Squint, rightCheekPuff_Squint, noseSneer (0 to 1), leftEyeOpen_Close, rightEyeOpen_Close, leftEyeUp_Down, rightEyeUp_Down, leftEyeIn_Out, rightEyeIn_Out, browsIn (0 to 1), leftBrowUp_Down, rightBrowUp_Down, midBrowUp_Down, leftGrasp (0 to 1), rightGrasp (0 to 1), leftPeace (0 to 1), rightPeace (0 to 1), leftRude (0 to 1), rightRude (0 to 1), leftPoint (0 to 1), rightPoint (0 to 1). Each parameter ranges from -1 to 1 unless specified otherwise.
+
+For expressions that can be achieved by setting or oscillating these parameters, provide a JSON object with the parameter names as keys and either a float for static values or an object with 'type': 'oscillate', 'min': float, 'max': float, 'frequency': float for oscillating values.
+
+For body animations, only include an 'animation_trigger' key when the expression explicitly involves lifting arms. Determine if the arm-lifting action is fully successful or only partially successful based on the description in the reply. If the action is fully successful (e.g., *lifts arm confidently*), use 'animation_trigger': 'lift_arm_full'. If the action is only partially successful or unsuccessful (e.g., *tries to lift arm but fails*), use 'animation_trigger': 'lift_arm_half'. For all other body animations (e.g., *waves*, *bows*, *shrugs*), do not include an 'animation_trigger'; instead, represent them using the available parameters if applicable (e.g., use leftGrasp, rightGrasp for pointing gestures) or omit them if they cannot be represented.
+
+If there are multiple expressions or actions, combine the commands appropriately. If there are no expressions or actions, return an empty JSON object.";
 
         var messagesArray = new JArray
         {
@@ -48,15 +56,17 @@ public class ExpressionInterpreterService
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
             JObject jsonResponse = JObject.Parse(responseString);
-            //Debug.Log("Response: " + responseString);
             string chatbotReply = jsonResponse["choices"]?[0]?["message"]?["content"]?.ToString();
-
+            Debug.Log("Chatbot reply: " + chatbotReply);
             JObject commandsJson = JObject.Parse(chatbotReply);
-            //Debug.Log("Parsed commands: " + commandsJson.ToString());
             var result = new Dictionary<string, object>();
             foreach (var property in commandsJson.Properties())
             {
-                if (property.Value.Type == JTokenType.Object)
+                if (property.Name == "animation_trigger" && property.Value.Type == JTokenType.String)
+                {
+                    result["animation_trigger"] = property.Value.Value<string>();
+                }
+                else if (property.Value.Type == JTokenType.Object)
                 {
                     var oscillate = new OscillateCommand
                     {
@@ -66,9 +76,13 @@ public class ExpressionInterpreterService
                     };
                     result[property.Name] = oscillate;
                 }
-                else
+                else if (property.Value.Type == JTokenType.Float || property.Value.Type == JTokenType.Integer)
                 {
                     result[property.Name] = property.Value.Value<float>();
+                }
+                else
+                {
+                    Debug.LogWarning($"Unsupported value type for {property.Name}: {property.Value.Type}");
                 }
             }
             Debug.Log("Received commands: " + JsonUtility.ToJson(result));
