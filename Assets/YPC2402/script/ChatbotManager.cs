@@ -95,64 +95,61 @@ public class ChatbotService
         }
     }
 }
+
 public class ChatbotManager : MonoBehaviour
 {
     [SerializeField] TMP_Text userText;
     [SerializeField] TMP_Text chatbotText;
-
-    // Reference to the CognitiveSpeech component (for text-to-speech)
     [SerializeField] StrokeDetectiveNPCData NPCData;
     [SerializeField] CognitiveSpeech cognitiveSpeech;
     [SerializeField] Button isStrokeBtn;
     [SerializeField] Button isNotStrokeBtn;
 
     private List<(string Role, string Content)> conversationHistory = new List<(string Role, string Content)>();
-
     private ChatbotService chatbotService = new ChatbotService();
+    private ExpressionInterpreterService expressionInterpreterService = new ExpressionInterpreterService(); // Add second chatbot service
+    private ExpressionControl expressionControl; // Reference to ExpressionControl
 
     private bool isTalking = false;
     private bool isEndofChat = false;
     public bool end = false;
-
     public int ChatToken = 5;
     private IEnumerator LoadingC;
-
     [SerializeField] GameObject rootGameObject, correctSign, wrongSign;
+
     private void Start()
     {
-        NPCData=GetComponent<Transform>().parent.GetComponent<NPC>().NPCData;
-        rootGameObject=GetComponent<Transform>().parent.gameObject;
+        NPCData = GetComponent<Transform>().parent.GetComponent<NPC>().NPCData;
+        rootGameObject = GetComponent<Transform>().parent.gameObject;
+        expressionControl = rootGameObject.GetComponent<ExpressionControl>(); // Get ExpressionControl component
         userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
-        isStrokeBtn.onClick.AddListener(() => {
+        isStrokeBtn.onClick.AddListener(() =>
+        {
             isNotStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(true, rootGameObject, correctSign, wrongSign);
-            end=true;
+            end = true;
         });
-
-        isNotStrokeBtn.onClick.AddListener(() => {
+        isNotStrokeBtn.onClick.AddListener(() =>
+        {
             isStrokeBtn.interactable = false;
             GameManager.instance.DetermineStroke(false, rootGameObject, correctSign, wrongSign);
-            end=true;
+            end = true;
         });
-        cognitiveSpeech=GameObject.FindObjectOfType<CognitiveSpeech>();
+        cognitiveSpeech = GameObject.FindObjectOfType<CognitiveSpeech>();
     }
 
     public async void StartChat()
     {
-        if (NPCData.symptoms!="cannot speak")
+        if (NPCData.symptoms != "cannot speak")
         {
             await ChatLoop();
         }
-        
-        if(isEndofChat){
+        if (isEndofChat)
+        {
             Debug.Log("End of Chat");
         }
     }
 
-    /// <summary>
-    /// Continuously listens for user input, sends the recognized text to the chatbot via DeepSeek API,
-    /// and then uses TTS to speak the chatbot's reply.
-    /// </summary>
     private async Task ChatLoop()
     {
         while (!end)
@@ -162,64 +159,60 @@ public class ChatbotManager : MonoBehaviour
                 await Task.Delay(100);
                 continue;
             }
-            //chatbotText.text = "Please say something to chat with the bot...";
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
             userText.SetText(userInput);
-            //userText.text = userInput;
 
             if (string.IsNullOrEmpty(userInput))
             {
                 Debug.Log("No valid speech detected. Please try again.");
                 continue;
-            } 
+            }
 
             Debug.Log("User said: " + userInput);
             conversationHistory.Add(("user", userInput));
-            LoadingC=LoadingCoroutine();
+            LoadingC = LoadingCoroutine();
             StartCoroutine(LoadingC);
-            string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory,NPCData.NPCDescription);
+            string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory, NPCData.NPCDescription);
             StopCoroutine(LoadingC);
             Debug.Log("Chatbot reply: " + chatbotReply);
-            // Extract expressions from the chatbot reply.
-            chatbotText.text = RemoveExpressionCommands(chatbotReply);
-            List<string> expressions =  ExtractExpressions(chatbotReply);
 
-            // Log the extracted expressions.
-            foreach (var expression in expressions)
-            {
-                Debug.Log("Extracted Expression: " + expression);
-            }
+            chatbotText.text = RemoveExpressionCommands(chatbotReply);
+
+            var commands = await expressionInterpreterService.GetExpressionCommands(chatbotReply);
+            
+            expressionControl.ApplyExpressionCommands(commands);
+
             conversationHistory.Add(("assistant", chatbotReply));
             isTalking = true;
             ChatToken--;
-            if(ChatToken <= 0){
+            if (ChatToken <= 0)
+            {
                 isEndofChat = true;
                 break;
             }
 
-            // Use the CognitiveSpeech component to synthesize and play the reply.
             await cognitiveSpeech.SynthesizeSpeech(chatbotText.text, OnAudioPlaybackFinished);
-
-            // Optionally, add a delay or exit condition here.
-            await Task.Delay(500); // slight pause between interactions
+            await Task.Delay(500);
         }
     }
 
+    // Existing LoadingCoroutine and OnAudioPlaybackFinished methods remain unchanged
     IEnumerator LoadingCoroutine()
     {
-        string loading=".";
-        while (true) {
+        string loading = ".";
+        while (true)
+        {
             chatbotText.SetText(loading);
             yield return new WaitForSeconds(1);
-            if (loading != "...") {
-                loading+=".";
-            } else {
-                loading=".";
+            if (loading != "...")
+            {
+                loading += ".";
             }
-            
+            else
+            {
+                loading = ".";
+            }
         }
-        
-
     }
 
     private void OnAudioPlaybackFinished()
@@ -227,40 +220,25 @@ public class ChatbotManager : MonoBehaviour
         isTalking = false;
     }
 
-
-    /// <summary>
-    /// Extracts messages enclosed in asterisks (*) from a given text.
-    /// </summary>
-    /// <param name="text">The input text containing expressions.</param>
-    /// <returns>A list of strings containing the extracted expressions.</returns>
+    // Existing ExtractExpressions and RemoveExpressionCommands methods remain unchanged
+    
     public List<string> ExtractExpressions(string text)
     {
-        // Define a regular expression pattern to find text that is enclosed in asterisks.
-        // The pattern \*(.*?)\* uses a non-greedy match to capture content between asterisks.
-        Regex regex = new Regex(@"\*(.*?)\*");
+        Regex regex = new Regex(@"\*(.*?)\*|\((.*?)\)");
         MatchCollection matches = regex.Matches(text);
-
         List<string> extractedExpressions = new List<string>();
-
         foreach (Match match in matches)
         {
-            // match.Groups[1] contains the content between the asterisks.
-            if (match.Groups.Count > 1)
-            {
-                extractedExpressions.Add(match.Groups[1].Value.Trim());
-            }
+            string extracted = match.Groups[1].Success ? match.Groups[1].Value : match.Groups[2].Value;
+            extractedExpressions.Add(extracted.Trim());
+            Debug.Log("Extracted expression: " + extracted.Trim());
         }
-
         return extractedExpressions;
     }
 
     public string RemoveExpressionCommands(string input)
     {
-        // Use Regex.Replace to remove all occurrences of text enclosed in asterisks.
-        // The pattern \*.*?\* matches any substring starting and ending with an asterisk.
-        string cleanedText = Regex.Replace(input, @"\*.*?\*", string.Empty);
-        
-        // Optionally, you can trim extra white spaces that result from the removal.
+        string cleanedText = Regex.Replace(input, @"\*(.*?)\*|\((.*?)\)", string.Empty);
         return cleanedText.Trim();
     }
 }
