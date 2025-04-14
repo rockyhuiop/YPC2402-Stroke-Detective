@@ -2793,7 +2793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c57c175c147cba4a864e39aa3f97bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userText: {fileID: 0}
   chatbotText: {fileID: 7039747641460005178}
+  NPCData: {fileID: 0}
   cognitiveSpeech: {fileID: 0}
   isStrokeBtn: {fileID: 7144899846484998914}
   isNotStrokeBtn: {fileID: 4847182533770554189}
@@ -6629,6 +6631,7 @@ GameObject:
   - component: {fileID: 4148775564555327863}
   - component: {fileID: 2385507204355227200}
   - component: {fileID: 850422936776346045}
+  - component: {fileID: 463331551548742493}
   m_Layer: 0
   m_Name: elderly
   m_TagString: NPC
@@ -9943,7 +9946,7 @@ MonoBehaviour:
   minWeight: 0
   logResetErrors: 0
   useDisableDistance: 0
-  processing: 0
+  processing: 1
   disableDistance: 10
   eyeMovementRange: 30
   mutualGazeRange: 0.1
@@ -9952,7 +9955,7 @@ MonoBehaviour:
   minSaccade: -0.6
   maxSaccade: 0.6
   allowUpDownSaccades: 0
-  animator: {fileID: 0}
+  animator: {fileID: 850422936776346045}
   ExpressionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10049,6 +10052,7 @@ MonoBehaviour:
   subtitleTextMesh: {fileID: 7039747641460005178}
   subtitleRadius: 0.35
   subtitleHeightOffset: 1.2
+  NPCData: {fileID: 0}
 --- !u!95 &850422936776346045
 Animator:
   serializedVersion: 5
@@ -10070,6 +10074,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &463331551548742493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430887105501654041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44353b8ec2ce72e4f9b3f1002da1723b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hardAI:
+  - {fileID: 1442200995268260304}
+  easyAI:
+  - {fileID: 2462864476708215349}
+  - {fileID: 5351087436897586574}
+  - {fileID: 9161079236692825070}
 --- !u!1 &3467655375459150959
 GameObject:
   m_ObjectHideFlags: 0
@@ -15369,7 +15391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c57c175c147cba4a864e39aa3f97bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userText: {fileID: 0}
   chatbotText: {fileID: 4740772988910467092}
+  NPCData: {fileID: 0}
   cognitiveSpeech: {fileID: 0}
   isStrokeBtn: {fileID: 3827958439052756351}
   isNotStrokeBtn: {fileID: 6586714929441434152}
@@ -21159,7 +21183,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7250229689785646963, guid: 0bd08184220c9914a877f3a735221e05, type: 3}
   m_PrefabInstance: {fileID: 6979094563743467829}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2462864476708215349}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54577d38420c01d44a9b28330b6a8517, type: 3}
@@ -21176,6 +21200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2462864476708215349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4825435160123347712, guid: 0bd08184220c9914a877f3a735221e05, type: 3}
+  m_PrefabInstance: {fileID: 6979094563743467829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3459640199010482348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5825870014156403097, guid: 0bd08184220c9914a877f3a735221e05, type: 3}
