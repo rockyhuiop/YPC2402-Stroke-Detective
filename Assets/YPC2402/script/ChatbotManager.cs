@@ -108,6 +108,12 @@ public class ChatbotManager : MonoBehaviour
     private List<(string Role, string Content)> conversationHistory = new List<(string Role, string Content)>();
     private ChatbotService chatbotService = new ChatbotService();
     private ExpressionInterpreterService expressionInterpreterService = new ExpressionInterpreterService(); // Add second chatbot service
+    private DetermineChatbotService determineChatbotService = new DetermineChatbotService();
+    private bool faceChecked = false;
+    private bool armsChecked = false;
+    private bool speechChecked = false;
+    public Image faceimg, armsimg, speechimg;
+    public bool isTutorial = false; // Flag to indicate if it's a tutorial
     private ExpressionControl expressionControl; // Reference to ExpressionControl
 
     private bool isTalking = false;
@@ -123,6 +129,9 @@ public class ChatbotManager : MonoBehaviour
         rootGameObject = GetComponent<Transform>().parent.gameObject;
         expressionControl = rootGameObject.GetComponent<ExpressionControl>(); // Get ExpressionControl component
         userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
+        // Disable buttons until all signs are checked
+        isStrokeBtn.interactable = false;
+        isNotStrokeBtn.interactable = false;
         isStrokeBtn.onClick.AddListener(() =>
         {
             isNotStrokeBtn.interactable = false;
@@ -161,14 +170,45 @@ public class ChatbotManager : MonoBehaviour
             }
             string userInput = await cognitiveSpeech.RecognizeSpeechAsync();
             userText.SetText(userInput);
-
             if (string.IsNullOrEmpty(userInput))
             {
                 Debug.Log("No valid speech detected. Please try again.");
                 continue;
             }
-
             Debug.Log("User said: " + userInput);
+
+            // Step 1: Use determine chatbot to classify the input
+            if(isTutorial){
+                string category = await determineChatbotService.GetCategory(userInput);
+                Debug.Log($"Input classified as: {category}");
+
+                // Step 2: Update F.A.S.T. tracking flags
+                if (category == "face")
+                {
+                    faceChecked = true;
+                    faceimg.sprite = correctSign.GetComponent<Image>().sprite;
+                }
+                else if (category == "arms")
+                {
+                    armsChecked = true;
+                    armsimg.sprite = correctSign.GetComponent<Image>().sprite;
+                }
+                else if (category == "speech")
+                {
+                    speechChecked = true;
+                    speechimg.sprite = correctSign.GetComponent<Image>().sprite;
+                }
+                else // category == "other"
+                {
+                    Debug.Log("Hint: Try asking about their face, arms, or speech to check for stroke symptoms.");
+                    // Optionally, modify NPC response or display a hint via UI in the future
+                }
+            }
+            
+
+
+
+            
             conversationHistory.Add(("user", userInput));
             LoadingC = LoadingCoroutine();
             StartCoroutine(LoadingC);
@@ -184,7 +224,19 @@ public class ChatbotManager : MonoBehaviour
 
             conversationHistory.Add(("assistant", chatbotReply));
             isTalking = true;
-            ChatToken--;
+
+            if(!isTutorial)
+            {
+                ChatToken--;
+            }else{
+                if (AllSignsChecked())
+                {
+                    isStrokeBtn.interactable = true;
+                    isNotStrokeBtn.interactable = true;
+                    Debug.Log("All F.A.S.T. signs checked. You can now make a decision.");
+                }
+            }
+            
             if (ChatToken <= 0)
             {
                 isEndofChat = true;
@@ -240,5 +292,10 @@ public class ChatbotManager : MonoBehaviour
     {
         string cleanedText = Regex.Replace(input, @"\*(.*?)\*|\((.*?)\)", string.Empty);
         return cleanedText.Trim();
+    }
+
+    private bool AllSignsChecked()
+    {
+        return faceChecked && armsChecked && speechChecked;
     }
 }
