@@ -16,6 +16,8 @@ The animation system has the following parameters: neckUp_Down, neckLeft_Right, 
 
 For expressions that can be achieved by setting or oscillating these parameters, provide a JSON object with the parameter names as keys and either a float for static values or an object with 'type': 'oscillate', 'min': float, 'max': float, 'frequency': float for oscillating values.
 
+To create more exaggerated facial and gestural expressions, when selecting values for static parameters, choose values closer to the extremes: for positive expressions, use values between 0.7 and 1.0; for negative expressions, use values between -1.0 and -0.7. For oscillating parameters, set min and max to have a difference of at least 0.5, and consider using higher frequencies (e.g., 1.0 to 2.0 Hz) to make the movements more dynamic and pronounced.
+
 For body animations, only include an 'animation_trigger' key when the expression explicitly involves lifting arms. Determine if the arm-lifting action is fully successful or only partially successful based on the description in the reply. If the action is fully successful (e.g., *lifts arm confidently*), use 'animation_trigger': 'lift_arm_full'. If the action is only partially successful or unsuccessful (e.g., *tries to lift arm but fails*), use 'animation_trigger': 'lift_arm_half'. For all other body animations (e.g., *waves*, *bows*, *shrugs*), do not include an 'animation_trigger'; instead, represent them using the available parameters if applicable (e.g., use leftGrasp, rightGrasp for pointing gestures) or omit them if they cannot be represented.
 
 If there are multiple expressions or actions, combine the commands appropriately. If there are no expressions or actions, return an empty JSON object.";
