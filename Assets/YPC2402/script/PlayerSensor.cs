@@ -38,6 +38,10 @@ public class PlayerSensor : MonoBehaviour
         Transform player=null;
         Transform NPC=GetComponent<Transform>().parent;
         foreach (var collider in colliderList) {
+            if (collider==null) { 
+                //colliderList.Remove(collider);
+                continue;    
+            }
             if (collider.transform.CompareTag("Player")) {
                 player = collider.transform;
                 havePlayer=true;

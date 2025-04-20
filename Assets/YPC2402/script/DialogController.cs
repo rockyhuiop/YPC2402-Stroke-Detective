@@ -23,7 +23,7 @@ public class DialogController : MonoBehaviour
         dialogBehaviour.BindExternalFunction("HalfSmile", HalfSmile);
         dialogBehaviour.BindExternalFunction("LiftHand", LiftHand);
         dialogBehaviour.BindExternalFunction("LiftHandFail", LiftHandFail);
-
+        NPC=GetComponent<Transform>().parent;
         //dialogBehaviour.StartDialog(dialogGraph);
     }
 
