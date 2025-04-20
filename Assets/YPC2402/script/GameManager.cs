@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //list of all NPC
     [SerializeField] GameObject[] NPCs;
     [SerializeField] StrokeDetectiveNPCData[] NPCData;
+    private string diff;
 
     private Dictionary<GameObject, StrokeDetectiveNPCData> NPCDataDict = new Dictionary<GameObject, StrokeDetectiveNPCData>();
     public int Correct_NPC=0;
@@ -32,7 +33,11 @@ public class GameManager : MonoBehaviour
         }else{
             Destroy(this);
         }
-
+        if (GameObject.FindObjectOfType<GlobalGameManager>().Easy) {
+            diff="easy";
+        } else {
+            diff="hard";
+        }
 
         Scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").transform.GetChild(0).GetComponent<TMP_Text>();
         Finish = GameObject.FindGameObjectWithTag("Finish");
@@ -118,6 +123,7 @@ public class GameManager : MonoBehaviour
             $"\"level\": {level}, " +
             $"\"acc\": {Correct_NPC*100.0/NPCs.Length}, " +
             $"\"time\": {time_used} " +
+            $"\"difficulty\": {diff} " +
             $"}}",
             "application/json"
             ))
@@ -133,7 +139,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Result upload complete!");
             }
         }
-        uri=api_uri+"get_avg/"+level;
+        uri=api_uri+"get_avg/"+level+"/"+diff;
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
             // Request and wait for the desired page.

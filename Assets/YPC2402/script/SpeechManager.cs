@@ -16,6 +16,7 @@ public class SpeechManager : MonoBehaviour
         }else{
             Destroy(this);
         }
+        cognitiveSpeech=GameObject.FindObjectOfType<CognitiveSpeech>();
     }
 
     // Update is called once per frame
