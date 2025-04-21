@@ -128,7 +128,8 @@ public class ChatbotManager : MonoBehaviour
         NPCData = GetComponent<Transform>().parent.GetComponent<NPC>().NPCData;
         rootGameObject = GetComponent<Transform>().parent.gameObject;
         expressionControl = rootGameObject.GetComponent<ExpressionControl>(); // Get ExpressionControl component
-        userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
+        if(userText == null)
+            userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
         // Disable buttons until all signs are checked
         isStrokeBtn.interactable = false;
         isNotStrokeBtn.interactable = false;
@@ -213,14 +214,16 @@ public class ChatbotManager : MonoBehaviour
             LoadingC = LoadingCoroutine();
             StartCoroutine(LoadingC);
             string chatbotReply = await chatbotService.GetChatbotReply(conversationHistory, NPCData.NPCDescription);
-            StopCoroutine(LoadingC);
+            
             Debug.Log("Chatbot reply: " + chatbotReply);
 
-            chatbotText.text = RemoveExpressionCommands(chatbotReply);
+            
 
             var commands = await expressionInterpreterService.GetExpressionCommands(chatbotReply);
             
             expressionControl.ApplyExpressionCommands(commands);
+            StopCoroutine(LoadingC);
+            chatbotText.text = RemoveExpressionCommands(chatbotReply);
 
             conversationHistory.Add(("assistant", chatbotReply));
             isTalking = true;
