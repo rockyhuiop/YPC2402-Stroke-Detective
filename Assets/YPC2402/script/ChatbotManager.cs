@@ -131,8 +131,11 @@ public class ChatbotManager : MonoBehaviour
         if(userText == null)
             userText = GameObject.FindObjectOfType<PlayerSubtitleController>().subtitleTextMesh;
         // Disable buttons until all signs are checked
-        isStrokeBtn.interactable = false;
-        isNotStrokeBtn.interactable = false;
+        if (isTutorial) {
+            isStrokeBtn.interactable = false;
+            isNotStrokeBtn.interactable = false;
+        }
+            
         isStrokeBtn.onClick.AddListener(() =>
         {
             isNotStrokeBtn.interactable = false;
