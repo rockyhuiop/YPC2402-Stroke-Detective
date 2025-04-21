@@ -122,8 +122,8 @@ public class GameManager : MonoBehaviour
             $"{{ " +
             $"\"level\": {level}, " +
             $"\"acc\": {Correct_NPC*100.0/NPCs.Length}, " +
-            $"\"time\": {time_used} " +
-            $"\"difficulty\": {diff} " +
+            $"\"time\": {time_used}, " +
+            $"\"difficulty\": \"{diff}\" " +
             $"}}",
             "application/json"
             ))
