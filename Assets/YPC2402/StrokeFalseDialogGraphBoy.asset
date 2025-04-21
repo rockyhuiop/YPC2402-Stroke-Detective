@@ -1,0 +1,556 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9122075200671818648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 867.3342
+    y: 309.33334
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: "M-my... name\u2019s... uh... Jeff. Yeah. J-Jeff."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: -5831055267921232319}
+  childNode: {fileID: 1055482650473601993}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &-8885630039342515030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 875.33374
+    y: 500.66614
+    width: 190
+    height: 155
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: Smile? Uh... okay..." (Smiles evenly with no facial drooping)
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: -5831055267921232319}
+  childNode: {fileID: 1055482650473601993}
+  isExternalFunc: 1
+  externalFunctionName: FullySmile
+--- !u!114 &-5831055267921232319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1717f3c6dba9fa40844ddacac301510, type: 3}
+  m_Name: Answer Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 519.33374
+    y: 298.0001
+    width: 190
+    height: 175
+  isDragging: 0
+  isSelected: 0
+  answers:
+  - "Can you tell me more about how you\u2019re feeling?"
+  - Can you tell me your name?
+  - Can you smile for me?
+  - Can you tell me what day it is?
+  parentSentenceNode: {fileID: 4865703814977024930}
+  childSentenceNodes:
+  - {fileID: -3069477495895278067}
+  - {fileID: -9122075200671818648}
+  - {fileID: -8885630039342515030}
+  - {fileID: -5075478601540837479}
+--- !u!114 &-5075478601540837479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 870.001
+    y: 740.666
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: "Day? Uh... um... it\u2019s... uh... Tuesday? Or... Saturday?"
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: -5831055267921232319}
+  childNode: {fileID: 1055482650473601993}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &-4130124686760225704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1644.6699
+    y: 200.00009
+    width: 190
+    height: 155
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: Yeah, sure..." (Raises both arms evenly but shakily)
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 1055482650473601993}
+  childNode: {fileID: 8416257141523870738}
+  isExternalFunc: 1
+  externalFunctionName: LiftHand
+--- !u!114 &-3069477495895278067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 781.334
+    y: 100.66675
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: "I... uh... feel kinda dizzy... but I think I\u2019m okay. Just... maybe
+      too much last night..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: -5831055267921232319}
+  childNode: {fileID: 1055482650473601993}
+  isExternalFunc: 0
+  externalFunctionName: LiftHand
+--- !u!114 &-1032610492301252320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1600.0024
+    y: 737.9995
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: Yeah... yeah, I had a few drinks with friends earlier... maybe a bit too
+      much...
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 1055482650473601993}
+  childNode: {fileID: 8416257141523870738}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
+  m_Name: StrokeFalseDialogGraphBoy
+  m_EditorClassIdentifier: 
+  nodesList:
+  - {fileID: 8631367091764162808}
+  - {fileID: 6607412110057101478}
+  - {fileID: 4865703814977024930}
+  - {fileID: -5831055267921232319}
+  - {fileID: -3069477495895278067}
+  - {fileID: -9122075200671818648}
+  - {fileID: -8885630039342515030}
+  - {fileID: -5075478601540837479}
+  - {fileID: 1055482650473601993}
+  - {fileID: -4130124686760225704}
+  - {fileID: 9051689979247160989}
+  - {fileID: 6014993595869367849}
+  - {fileID: -1032610492301252320}
+  - {fileID: 8416257141523870738}
+  - {fileID: 6728872074412047624}
+  - {fileID: 5863412115476582178}
+  - {fileID: 866455854836344531}
+  nodeToDrawLineFrom: {fileID: 0}
+  linePosition: {x: 0, y: 0}
+--- !u!114 &866455854836344531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 2565.3374
+    y: 153.33337
+    width: 190
+    height: 155
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: 
+    text: "Incorrect. This NPC is not having a stroke but is intoxicated. Here\u2019s
+      what you missed:  No facial drooping was observed (Face). Arm strength was
+      symmetrical (Arms). Speech was slurred but coherent, without aphasia (Speech).\"
+      Tip: Always check for asymmetry and confirm multiple FAST criteria before diagnosing
+      a stroke."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 6728872074412047624}
+  childNode: {fileID: 0}
+  isExternalFunc: 1
+  externalFunctionName: showWrongSign
+--- !u!114 &1055482650473601993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1717f3c6dba9fa40844ddacac301510, type: 3}
+  m_Name: Answer Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1274.667
+    y: 362.66687
+    width: 190
+    height: 175
+  isDragging: 0
+  isSelected: 0
+  answers:
+  - Can you raise both of your left arm for me?
+  - "I think you\u2019re having a stroke\u2014stay here, I\u2019ll call for help!"
+  - Are you experiencing any numbness or weakness on one side of your body?
+  - Have you been drinking alcohol today?
+  parentSentenceNode: {fileID: -5075478601540837479}
+  childSentenceNodes:
+  - {fileID: -4130124686760225704}
+  - {fileID: 9051689979247160989}
+  - {fileID: 6014993595869367849}
+  - {fileID: -1032610492301252320}
+--- !u!114 &4865703814977024930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 224.00049
+    y: 271.33334
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: Yeah! I am good today.
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 6607412110057101478}
+  childNode: {fileID: -5831055267921232319}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &5863412115476582178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 2585.3374
+    y: 503.3329
+    width: 190
+    height: 155
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: 
+    text: Correct! This NPC is not experiencing a stroke but is showing signs of
+      alcohol intoxication. While slurred speech and unsteadiness can mimic stroke
+      symptoms, key signs like facial drooping, arm weakness, or speech aphasia were
+      absent.
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 6728872074412047624}
+  childNode: {fileID: 0}
+  isExternalFunc: 1
+  externalFunctionName: showCorrectSign
+--- !u!114 &6014993595869367849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1590.669
+    y: 527.99927
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: Smile? Uh... okay..." (Smiles evenly with no facial drooping)
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 1055482650473601993}
+  childNode: {fileID: 8416257141523870738}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &6607412110057101478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1717f3c6dba9fa40844ddacac301510, type: 3}
+  m_Name: Answer Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: -13.999878
+    y: 174.3335
+    width: 190
+    height: 115
+  isDragging: 0
+  isSelected: 0
+  answers:
+  - Hi there! How are you?
+  parentSentenceNode: {fileID: 8631367091764162808}
+  childSentenceNodes:
+  - {fileID: 4865703814977024930}
+--- !u!114 &6728872074412047624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1717f3c6dba9fa40844ddacac301510, type: 3}
+  m_Name: Answer Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 2248.003
+    y: 396
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  answers:
+  - Yes, this is a stroke.
+  - No, this is alcohol intoxication.
+  parentSentenceNode: {fileID: 8416257141523870738}
+  childSentenceNodes:
+  - {fileID: 866455854836344531}
+  - {fileID: 5863412115476582178}
+--- !u!114 &8416257141523870738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1957.3359
+    y: 396.00012
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: 
+    text: Based on your interaction, do you think this NPC is having a stroke?
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: -1032610492301252320}
+  childNode: {fileID: 6728872074412047624}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &8631367091764162808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: -327.33203
+    y: 72.66681
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: ...
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 0}
+  childNode: {fileID: 6607412110057101478}
+  isExternalFunc: 0
+  externalFunctionName: 
+--- !u!114 &9051689979247160989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a464d8ccff4e40a60c45b40a1e648, type: 3}
+  m_Name: Sentence Node
+  m_EditorClassIdentifier: 
+  connectedNodesList: []
+  nodeGraph: {fileID: 11400000}
+  rect:
+    serializedVersion: 2
+    x: 1598.3359
+    y: 382.66687
+    width: 190
+    height: 135
+  isDragging: 0
+  isSelected: 0
+  sentence:
+    characterName: Boy
+    text: "Stroke? No, no... I\u2019m just... uh... dizzy... it\u2019s not that...
+      I\u2019m fine, really..."
+    characterSprite: {fileID: 0}
+  parentNode: {fileID: 1055482650473601993}
+  childNode: {fileID: 8416257141523870738}
+  isExternalFunc: 0
+  externalFunctionName: 
