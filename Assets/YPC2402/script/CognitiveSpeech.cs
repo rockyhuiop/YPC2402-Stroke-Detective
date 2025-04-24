@@ -40,30 +40,48 @@ public class CognitiveSpeech : MonoBehaviour
         
         // Optionally, set the desired voice
         // You can find available voices here: https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech
-        string voiceName = "";
-        switch (languageCode)
-        {
-            case LanguageCode.English:
-                //voiceName = "en-GB-AdaMultilingualNeural";
-                voiceName = "en-US-AndrewMultilingualNeural";
-                break;
-            case LanguageCode.Chinese:
-                voiceName = "zh-CN-XiaoxiaoMultilingualNeural";
-                break;
-            case LanguageCode.Cantonese:
-                voiceName = "zh-HK-HiuMaanNeural";
-                break;
-        }
-        speechConfig.SpeechSynthesisVoiceName = voiceName;
+        //string voiceName = "";
+        //switch (languageCode)
+        //{
+        //    case LanguageCode.English:
+        //        //voiceName = "en-GB-AdaMultilingualNeural";
+        //        voiceName = "en-US-AndrewMultilingualNeural";
+        //        break;
+        //    case LanguageCode.Chinese:
+        //        voiceName = "zh-CN-XiaoxiaoMultilingualNeural";
+        //        break;
+        //    case LanguageCode.Cantonese:
+        //        voiceName = "zh-HK-HiuMaanNeural";
+        //        break;
+        //}
+        //speechConfig.SpeechSynthesisVoiceName = voiceName;
     }
 
     // Public method to convert text to speech
-    public async Task SynthesizeSpeech(string text, Action callback)
+    public async Task SynthesizeSpeech(string text, Action callback, bool isMale)
     {
         if (string.IsNullOrEmpty(text))
         {
             Debug.LogWarning("Text is null or empty. Cannot synthesize speech.");
             return;
+        }
+        switch (languageCode)
+        {
+            case LanguageCode.English:
+                //voiceName = "en-GB-AdaMultilingualNeural";
+                if (isMale) {
+                    speechConfig.SpeechSynthesisVoiceName = "en-US-AndrewMultilingualNeural";
+                } else {
+                    speechConfig.SpeechSynthesisVoiceName = "en-US-JennyNeural";
+                }
+                
+                break;
+            case LanguageCode.Chinese:
+                speechConfig.SpeechSynthesisVoiceName = "zh-CN-XiaoxiaoMultilingualNeural";
+                break;
+            case LanguageCode.Cantonese:
+                speechConfig.SpeechSynthesisVoiceName = "zh-HK-HiuMaanNeural";
+                break;
         }
 
         using (var synthesizer = new SpeechSynthesizer(speechConfig, null))

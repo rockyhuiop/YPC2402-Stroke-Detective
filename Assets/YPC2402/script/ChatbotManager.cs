@@ -249,7 +249,7 @@ public class ChatbotManager : MonoBehaviour
                 break;
             }
 
-            await cognitiveSpeech.SynthesizeSpeech(chatbotText.text, OnAudioPlaybackFinished);
+            await cognitiveSpeech.SynthesizeSpeech(chatbotText.text, OnAudioPlaybackFinished,GetComponent<Transform>().parent.GetComponent<NPC>().isMale);
             await Task.Delay(500);
         }
     }

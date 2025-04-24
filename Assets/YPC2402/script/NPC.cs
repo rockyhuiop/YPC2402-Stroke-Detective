@@ -10,6 +10,7 @@ public class NPC : MonoBehaviour
     public float subtitleRadius = 1.0f; // Radius of the circle around the NPC
     public float subtitleHeightOffset = 1.5f; // Height above the NPC for the subtitle
     public StrokeDetectiveNPCData NPCData;
+    public bool isMale;
 
     // Start is called before the first frame update
     void Start()
